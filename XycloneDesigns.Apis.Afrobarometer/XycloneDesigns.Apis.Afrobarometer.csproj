@@ -9,7 +9,7 @@
   <PropertyGroup>
     <Authors>Xyclone Designs</Authors>
     <Copyright>Copyright © $(Authors) $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
-    <Description>Companion package for Xyclone Designs IEC Api &amp; xyclone-designs/database.iec github project</Description>
+    <Description>Companion package for the xyclone-designs/database.afrobarometer github project</Description>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <IncludeSymbols>False</IncludeSymbols>
     <PackageIcon>icon.png</PackageIcon>
@@ -20,14 +20,14 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>Initial</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageTags>south;africa;elections;iec;independent;electoral;commission;extension;xyclone;designs</PackageTags>
+    <PackageTags>survey;africa;afrobarometer;api;xyclone;designs</PackageTags>
     <RepositoryUrl>https://github.com/xyclone-designs/packages.apis/$(AssemblyName)</RepositoryUrl>
     <Title>$(AssemblyName)</Title>
-    <Version>1.0</Version>
+    <Version>0.1.7</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.0.0" />
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="0.1.7" />
     <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />
   </ItemGroup>
 

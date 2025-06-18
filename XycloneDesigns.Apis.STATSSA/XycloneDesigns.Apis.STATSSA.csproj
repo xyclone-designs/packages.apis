@@ -23,10 +23,11 @@
     <PackageTags>south;africa;statistics;statssa;api;xyclone;designs</PackageTags>
     <RepositoryUrl>https://github.com/xyclone-designs/packages.apis/$(AssemblyName)</RepositoryUrl>
     <Title>$(AssemblyName)</Title>
-    <Version>0.1.0</Version>
+    <Version>1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.0.0" />
     <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />
   </ItemGroup>
 

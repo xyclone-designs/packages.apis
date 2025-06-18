@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis.General", "XycloneDesigns.Apis.General\XycloneDesigns.Apis.General.csproj", "{23F15F84-B8F6-486F-B268-107C7F4C7A1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.General", "XycloneDesigns.Apis.General\XycloneDesigns.Apis.General.csproj", "{23F15F84-B8F6-486F-B268-107C7F4C7A1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis.IEC", "XycloneDesigns.Apis.IEC\XycloneDesigns.Apis.IEC.csproj", "{24C7C33C-94E5-4E48-9101-E03689B407CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.IEC", "XycloneDesigns.Apis.IEC\XycloneDesigns.Apis.IEC.csproj", "{24C7C33C-94E5-4E48-9101-E03689B407CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis.STATSSA", "XycloneDesigns.Apis.STATSSA\XycloneDesigns.Apis.STATSSA.csproj", "{5FD287C9-72EB-4743-8B6B-1183F3CC1632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.STATSSA", "XycloneDesigns.Apis.STATSSA\XycloneDesigns.Apis.STATSSA.csproj", "{5FD287C9-72EB-4743-8B6B-1183F3CC1632}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis.SAPS", "XycloneDesigns.Apis.SAPS\XycloneDesigns.Apis.SAPS.csproj", "{DDAF357F-720A-4A1A-917D-1626A54E1DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.SAPS", "XycloneDesigns.Apis.SAPS\XycloneDesigns.Apis.SAPS.csproj", "{DDAF357F-720A-4A1A-917D-1626A54E1DD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis.MunicipalMoney", "XycloneDesigns.Apis.MunicipalMoney\XycloneDesigns.Apis.MunicipalMoney.csproj", "{371EEE3D-E568-4D1A-BCE9-CF83A75BED5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.MunicipalMoney", "XycloneDesigns.Apis.MunicipalMoney\XycloneDesigns.Apis.MunicipalMoney.csproj", "{371EEE3D-E568-4D1A-BCE9-CF83A75BED5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis.Afrobarometer", "XycloneDesigns.Apis.Afrobarometer\XycloneDesigns.Apis.Afrobarometer.csproj", "{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{371EEE3D-E568-4D1A-BCE9-CF83A75BED5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{371EEE3D-E568-4D1A-BCE9-CF83A75BED5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{371EEE3D-E568-4D1A-BCE9-CF83A75BED5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
