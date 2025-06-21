@@ -12,6 +12,7 @@ namespace XycloneDesigns.Apis.General.Tables
 			public const string BurkinaFaso = "bfo";
 			public const string Botswana = "bot";
 			public const string Cameroon = "cam";
+			public const string CapeVerde = "cve";
 			public const string CongoBrazzaville = "cbz";
 			public const string CaboVerde = "cve";
 			public const string CoteDIvoire = "cdi";

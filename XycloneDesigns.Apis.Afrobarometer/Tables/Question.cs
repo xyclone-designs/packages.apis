@@ -21,7 +21,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Tables
 		[SQLite.Column(SQL.Column_Id)] public string? Id { get; set; }
 		[SQLite.Column(SQL.Column_List_PkSurvey)] public string? List_PkSurvey { get; set; }
 		[SQLite.Column(SQL.Column_Note)] public string? Note { get; set; }
-		[SQLite.Column(SQL.Column_PkLanguage)] public string? PkLanguage { get; set; }
+		[SQLite.Column(SQL.Column_PkLanguage)] public int? PkLanguage { get; set; }
 		[SQLite.Column(SQL.Column_PkVariable)] public int? PkVariable { get; set; }
 		[SQLite.Column(SQL.Column_Source)] public string? Source { get; set; }
 		[SQLite.Column(SQL.Column_Text)] public string? Text { get; set; }

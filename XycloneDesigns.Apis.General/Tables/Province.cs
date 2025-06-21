@@ -2,7 +2,7 @@
 namespace XycloneDesigns.Apis.General.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public class Province : _Table
+	public partial class Province : _Table
 	{
 		public new class SQL
 		{
