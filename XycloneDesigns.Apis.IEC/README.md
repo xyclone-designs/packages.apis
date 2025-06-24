@@ -1,1 +1,1 @@
-Companion package for Xyclone Designs SouthAfricanCensus Api & xyclone-designs/database.southafricancensus github project
+Companion package for Xyclone Designs IEC Api & xyclone-designs/database.iec github project

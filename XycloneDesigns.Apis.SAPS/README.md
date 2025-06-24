@@ -1,1 +1,1 @@
-Companion package for Xyclone Designs SouthAfricanCensus Api & xyclone-designs/database.southafricancensus github project
+Companion package for & xyclone-designs/database.sapscrime github project

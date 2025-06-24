@@ -1,1 +1,1 @@
-Companion package for Xyclone Designs SouthAfricanCensus Api & xyclone-designs/database.southafricancensus github project
+Companion package for the Municipal Money
