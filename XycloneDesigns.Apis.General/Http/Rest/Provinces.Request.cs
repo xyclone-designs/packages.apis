@@ -1,32 +1,24 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace XycloneDesigns.Apis.IEC.Http.Rest
+namespace XycloneDesigns.Apis.General.Http.Rest
 {
 	public partial class Provinces 
 	{
-		public class Request : IECRest.Request
+		public class Request : GeneralRest.Request
 		{
-			public new class Parameters : IECRest.Request.Parameters
+			public new class Parameters : GeneralRest.Request.Parameters
 			{
+				public const string Id = "id";
+
 				public new static IEnumerable<string> AsEnumerable()
 				{
-					return IECRest.Request.Parameters.AsEnumerable()
-						.Append(PkElectoralEvent)
-						.Append(PkMunicipality)
-						.Append(PkProvince)
-						.Append(PkVotingDistrict)
-						.Append(PkWard)
-						.Append(Type);
+					return GeneralRest.Request.Parameters.AsEnumerable()
+						.Append(Id);
 				}
 			}
 
-			public int[]? PkElectoralEvent { get; set; }
-			public int[]? PkMunicipality { get; set; }
-			public int[]? PkProvince { get; set; }
-			public int[]? PkVotingDistrict { get; set; }
-			public int[]? PkWard { get; set; }
-			public string[]? Type { get; set; }
+			public string[]? Id { get; set; }
 		}
 	}
 }

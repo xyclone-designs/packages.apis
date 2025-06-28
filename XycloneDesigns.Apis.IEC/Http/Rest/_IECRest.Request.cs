@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Collections.Generic;
 
 using XycloneDesigns.Apis.General.Http.Rest;
@@ -14,7 +13,6 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 				public const string Abbr = "Abbr";
 				public const string GeoCode = "GeoCode";
 				public const string Id = "Id";
-				public const string Pk = "Pk";
 				public const string PkElectoralEvent = "PkElectoralEvent";
 				public const string PkMunicipality = "PkMunicipality";
 				public const string PkProvince = "PkProvince";
@@ -24,12 +22,9 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 
 				public new static IEnumerable<string> AsEnumerable()
 				{
-					return GeneralRest.Request.Parameters.AsEnumerable()
-						.Append(Pk);
+					return GeneralRest.Request.Parameters.AsEnumerable();
 				}
 			}
-
-			public int[]? Pk { get; set; }
 		}
 	}
 }

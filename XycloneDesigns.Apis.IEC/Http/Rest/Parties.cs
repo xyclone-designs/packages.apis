@@ -30,7 +30,7 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 					(Name, false) => queryable.OrderBy(_ => _.Name),
 					(Name, true) => queryable.OrderByDescending(_ => _.Name),
 
-					(_, _) => IECModel.OrderKeys.Order(queryable, orderkey, reverse)
+					(_, _) => IECRest.OrderKeys.Order(queryable, orderkey, reverse)
 				};
 			}
 			public static IQueryable<Party> Order(IQueryable<Party> queryable, bool reverse, params string[] orderkeys)
@@ -45,7 +45,7 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return IECModel.OrderKeys.AsEnumerable()
+				return IECRest.OrderKeys.AsEnumerable()
 					.Append(Abbr)
 					.Append(DateEstablished)
 					.Append(DateDisestablished)

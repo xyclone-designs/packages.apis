@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace XycloneDesigns.Apis.General.Http.Rest
 {
-	public partial class Languages 
+	public partial class Countries 
 	{
 		public class Request : GeneralRest.Request
 		{

@@ -30,7 +30,7 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 					(Ward, false) => queryable.OrderBy(_ => _.PkWard),
 					(Ward, true) => queryable.OrderByDescending(_ => _.PkWard),
 
-					(_, _) => IECModel.OrderKeys.Order(queryable, orderkey, reverse)
+					(_, _) => IECRest.OrderKeys.Order(queryable, orderkey, reverse)
 				};
 			}
 			public static IQueryable<VotingDistrict> Order(IQueryable<VotingDistrict> queryable, bool reverse, params string[] orderkeys)
@@ -45,7 +45,7 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return IECModel.OrderKeys.AsEnumerable()
+				return IECRest.OrderKeys.AsEnumerable()
 					.Append(Id)
 					.Append(Municipality)
 					.Append(Province)

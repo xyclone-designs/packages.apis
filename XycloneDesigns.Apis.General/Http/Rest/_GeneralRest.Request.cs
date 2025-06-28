@@ -13,6 +13,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 				public const string PageSize = "PageSize";
 				public const string OrderBy = "OrderBy";
 				public const string Reverse = "Reverse";
+				public const string Pk = "Pk";
 
 				public static IEnumerable<string> AsEnumerable()
 				{
@@ -20,13 +21,15 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 						.Append(Page)
 						.Append(PageSize)
 						.Append(OrderBy)
-						.Append(Reverse);
+						.Append(Reverse)
+						.Append(Pk);
 				}
 			}
 
 			public int Page { get; set; } = 1;
 			public int PageSize { get; set; } = 10;
 			public string[] OrderBy { get; set; } = [];
+			public int[] Pk { get; set; } = [];
 			public bool Reverse { get; set; } = false;
 
 			public void PaginationValues(int itemscount, out int page, out int pages, out int skipcount, out int pagesize)
@@ -46,12 +49,14 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 				Page = @default;
 				PageSize = @default;
 				OrderBy = @default;
+                Pk = @default;
                 Reverse = @default;
 			}
 
 			public T Page { get; set; } 
 			public T PageSize { get; set; }
 			public T OrderBy { get; set; } 
+			public T Pk { get; set; } 
 			public T Reverse { get; set; } 
 		}
     }

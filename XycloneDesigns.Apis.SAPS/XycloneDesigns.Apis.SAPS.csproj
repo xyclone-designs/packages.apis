@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.0.2" />
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.1.6" />
     <PackageReference Include="XycloneDesigns.Extensions.CSharp" Version="1.0.4" />
     <PackageReference Include="XycloneDesigns.Extensions.GZip" Version="1.0.0" />
     <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />

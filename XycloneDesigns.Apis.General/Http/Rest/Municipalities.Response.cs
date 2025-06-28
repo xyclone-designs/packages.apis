@@ -1,16 +1,15 @@
 using System.Linq;
 using System.Collections.Generic;
-
 using XycloneDesigns.Apis.General.Tables;
 
 namespace XycloneDesigns.Apis.General.Http.Rest
 {
-	public partial class Provinces 
+	public partial class Municipalities 
 	{
 		public class Response : GeneralRest.Response<object>
 		{
 			public Response() { }
-			public Response(Request request, IQueryable<Province> queryable)
+			public Response(Request request, IQueryable<Municipality> queryable)
 			{
 				queryable = Filter(request, queryable);
 
@@ -24,21 +23,21 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 					.Take(outpagesize);
 			}
 
-			public IQueryable<Province> Filter(Request request, IQueryable<Province> queryable)
+			public IQueryable<Municipality> Filter(Request request, IQueryable<Municipality> queryable)
 			{
 				queryable = base.Filter(request, queryable);
 
-				if (request.Id?.Select(_ => _.ToLower()) is IEnumerable<string> requesttype)
+				if (request.GeoCode?.Select(_ => _.ToLower()) is IEnumerable<string> requesttype)
 				{
 					if (requesttype.Where(_ => _.StartsWith('-')) is IEnumerable<string> excludes && excludes.Any() && excludes.Any(_ => _ == "-null") is bool excludesnull)
 						queryable = excludesnull
-							? queryable.Where(_ => _.Id != null && excludes.All(__ => __ != '-' + _.Id.ToLower()))
-							: queryable.Where(_ => _.Id == null || excludes.All(__ => __ != '-' + _.Id.ToLower()));
+							? queryable.Where(_ => _.GeoCode != null && excludes.All(__ => __ != '-' + _.GeoCode.ToLower()))
+							: queryable.Where(_ => _.GeoCode == null || excludes.All(__ => __ != '-' + _.GeoCode.ToLower()));
 
 					if (requesttype.Where(_ => !_.StartsWith('-')) is IEnumerable<string> includes && includes.Any() && includes.Any(_ => _ == "null") is bool includesnull)
 						queryable = includesnull
-							? queryable.Where(_ => _.Id == null || includes.Any(__ => __ == _.Id.ToLower()))
-							: queryable.Where(_ => _.Id != null && includes.Any(__ => __ == _.Id.ToLower()));
+							? queryable.Where(_ => _.GeoCode == null || includes.Any(__ => __ == _.GeoCode.ToLower()))
+							: queryable.Where(_ => _.GeoCode != null && includes.Any(__ => __ == _.GeoCode.ToLower()));
 				}
 
 				return queryable;

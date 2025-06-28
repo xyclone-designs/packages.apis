@@ -12,7 +12,6 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 			public const string Id = "id";
 			public const string Municipality = "municipality";
 			public const string Province = "province";
-			public const string VotingDistrictCount = "votingDistrictCount";
 
 			public static IOrderedQueryable<Ward> Order(IQueryable<Ward> queryable, string orderkey, bool reverse)
 			{
@@ -27,18 +26,7 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 					(Province, false) => queryable.OrderBy(_ => _.PkProvince),
 					(Province, true) => queryable.OrderByDescending(_ => _.PkProvince),
 
-					(VotingDistrictCount, _) => queryable.OrderByDescending(_ => _.List_PkVotingDistrict, Comparer<string?>.Create((x, y) =>
-					{
-						int xcount = x?.Split(',').Length ?? 0;
-						int ycount = y?.Split(',').Length ?? 0;
-
-						if (xcount < ycount) return reverse ? 1 : -1;
-						if (xcount > ycount) return reverse ? -1 : 1;
-
-						return 0;
-					})),
-
-					(_, _) => IECModel.OrderKeys.Order(queryable, orderkey, reverse)
+					(_, _) => IECRest.OrderKeys.Order(queryable, orderkey, reverse)
 				};
 			}
 			public static IQueryable<Ward> Order(IQueryable<Ward> queryable, bool reverse, params string[] orderkeys)
@@ -53,11 +41,10 @@ namespace XycloneDesigns.Apis.IEC.Http.Rest
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return IECModel.OrderKeys.AsEnumerable()
+				return IECRest.OrderKeys.AsEnumerable()
 					.Append(Id)
 					.Append(Municipality)
-					.Append(Province)
-					.Append(VotingDistrictCount);
+					.Append(Province);
 			}
 		}
 	}
