@@ -1,0 +1,41 @@
+using System.Collections.Generic;
+using System.Linq;
+
+using XycloneDesigns.Apis.General.Tables;
+
+namespace XycloneDesigns.Apis.General.Http.Rest
+{
+	public partial class Districts 
+	{
+		public static class OrderKeys 
+		{
+			public const string Code = "code";
+			
+			public static IOrderedQueryable<District> Order(IQueryable<District> queryable, string orderkey, bool reverse)
+			{
+				return (orderkey, reverse) switch
+				{
+					(Code, false) => queryable.OrderBy(_ => _.Code),
+					(Code, true) => queryable.OrderByDescending(_ => _.Code),
+
+					(_, _) => GeneralRest.OrderKeys.Order(queryable, orderkey, reverse)
+				};
+			}
+			public static IQueryable<District> Order(IQueryable<District> queryable, bool reverse, params string[] orderkeys)
+			{
+				IOrderedQueryable<District>? ordered = null;
+
+				foreach (string orderkey in orderkeys)
+					ordered = Order(ordered ?? queryable, orderkey, reverse);
+
+				return ordered ?? queryable;
+			}
+
+			public static IEnumerable<string> AsEnumerable()
+			{
+				return GeneralRest.OrderKeys.AsEnumerable()
+					.Append(Code);
+			}
+		}
+	}
+}

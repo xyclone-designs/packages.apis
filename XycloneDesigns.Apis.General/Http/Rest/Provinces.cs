@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 	{
 		public static class OrderKeys 
 		{
-			public const string Id = "id";
+			public const string Code = "code";
 			public const string Population = "population";
 			public const string SquareKms = "squareKms";
 
@@ -17,8 +17,8 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 			{
 				return (orderkey, reverse) switch
 				{
-					(Id, false) => queryable.OrderBy(_ => _.Id),
-					(Id, true) => queryable.OrderByDescending(_ => _.Id),
+					(Code, false) => queryable.OrderBy(_ => _.Code),
+					(Code, true) => queryable.OrderByDescending(_ => _.Code),
 
 					(Population, false) => queryable.OrderByDescending(_ => _.Population),
 					(Population, true) => queryable.OrderBy(_ => _.Population),
@@ -42,7 +42,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 			public static IEnumerable<string> AsEnumerable()
 			{
 				return GeneralRest.OrderKeys.AsEnumerable()
-					.Append(Id)
+					.Append(Code)
 					.Append(Population)
 					.Append(SquareKms);
 			}

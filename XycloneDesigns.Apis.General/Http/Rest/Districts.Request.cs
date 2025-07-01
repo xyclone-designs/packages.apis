@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace XycloneDesigns.Apis.General.Http.Rest
 {
-	public partial class Provinces 
+	public partial class Districts 
 	{
 		public class Request : GeneralRest.Request
 		{

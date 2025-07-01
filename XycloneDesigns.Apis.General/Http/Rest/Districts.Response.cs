@@ -5,12 +5,12 @@ using XycloneDesigns.Apis.General.Tables;
 
 namespace XycloneDesigns.Apis.General.Http.Rest
 {
-	public partial class Provinces 
+	public partial class Districts 
 	{
 		public class Response : GeneralRest.Response<object>
 		{
 			public Response() { }
-			public Response(Request request, IQueryable<Province> queryable)
+			public Response(Request request, IQueryable<District> queryable)
 			{
 				queryable = Filter(request, queryable);
 
@@ -24,7 +24,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 					.Take(outpagesize);
 			}
 
-			public IQueryable<Province> Filter(Request request, IQueryable<Province> queryable)
+			public IQueryable<District> Filter(Request request, IQueryable<District> queryable)
 			{
 				queryable = base.Filter(request, queryable);
 

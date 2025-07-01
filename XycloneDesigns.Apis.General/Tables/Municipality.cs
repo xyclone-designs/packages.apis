@@ -20,6 +20,8 @@ namespace XycloneDesigns.Apis.General.Tables
 			public const string Column_NameLong = "nameLong";
 			public const string Column_NumberFax = "numberFax";
 			public const string Column_NumberPhone = "numberPhone";
+			public const string Column_PkCountry = "pkCountry";
+			public const string Column_PkDistrict = "pkDistrict";
 			public const string Column_PkProvince = "pkProvince";
 			public const string Column_Population = "population";
 			public const string Column_SquareKms = "squareKms";
@@ -31,7 +33,7 @@ namespace XycloneDesigns.Apis.General.Tables
         [SQLite.Column(SQL.Column_AddressPostal)] public string? AddressPostal { get; set; }
         [SQLite.Column(SQL.Column_AddressStreet)] public string? AddressStreet { get; set; }
 		[SQLite.Column(SQL.Column_Category)] public string? Category { get; set; }
-		[SQLite.Column(SQL.Column_GeoCode)] public string? GeoCode { get; set; }
+		[SQLite.Column(SQL.Column_GeoCode), SQLite.Unique] public string? GeoCode { get; set; }
 		[SQLite.Column(SQL.Column_GeoLevel)] public string? GeoLevel { get; set; }
 		[SQLite.Column(SQL.Column_IsDisestablished)] public bool? IsDisestablished { get; set; }
 		[SQLite.Column(SQL.Column_MiifCategory)] public string? MiifCategory { get; set; }
@@ -39,6 +41,8 @@ namespace XycloneDesigns.Apis.General.Tables
 		[SQLite.Column(SQL.Column_NameLong)] public string? NameLong { get; set; }
 		[SQLite.Column(SQL.Column_NumberFax)] public string? NumberFax { get; set; }
 		[SQLite.Column(SQL.Column_NumberPhone)] public string? NumberPhone { get; set; }
+		[SQLite.Column(SQL.Column_PkCountry)] public int? PkCountry { get; set; }
+		[SQLite.Column(SQL.Column_PkDistrict)] public int? PkDistrict { get; set; }
 		[SQLite.Column(SQL.Column_PkProvince)] public int? PkProvince { get; set; }
 		[SQLite.Column(SQL.Column_Population)] public int? Population { get; set; }
 		[SQLite.Column(SQL.Column_SquareKms)] public decimal? SquareKms { get; set; }

@@ -8,6 +8,8 @@ namespace XycloneDesigns.Apis.General.Models
 		public string? AddressPostal { get; set; }
 		public string? AddressStreet { get; set; }
 		public string? Category { get; set; }
+		public Country? Country { get; set; }
+		public District? District { get; set; }
 		public string? GeoLevel { get; set; }
 		public string? GeoCode { get; set; }
 		public bool? IsDisestablished { get; set; }
