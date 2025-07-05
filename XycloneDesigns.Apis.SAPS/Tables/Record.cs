@@ -6,7 +6,7 @@ namespace XycloneDesigns.Apis.SAPS.Tables
     {
         public new class SQL
         {
-            public const string Table = "record";
+            public const string Table = "records";
 
 			public const string Column_List_PkCategoryValue = "list_pkCategoryValue";
 			public const string Column_PkPoliceStation = "pkPoliceStation";
