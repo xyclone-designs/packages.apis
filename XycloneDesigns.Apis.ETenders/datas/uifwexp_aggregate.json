@@ -1,0 +1,1 @@
+{"total_cell_count": 1, "cells": [{"_count": 9543, "amount.sum": 848653662083.0}], "summary": {"_count": 9543, "amount.sum": 848653662083.0}, "cell": [], "aggregates": ["_count", "amount.sum"], "attributes": [], "order": [], "page": 1, "page_size": 10000, "status": "ok"}

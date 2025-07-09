@@ -1,0 +1,1 @@
+{"total_cell_count": 1, "cells": [{"_count": 292, "area.sum": 86564043}], "summary": {"_count": 292, "area.sum": 86564043}, "cell": [], "aggregates": ["_count", "area.sum"], "attributes": [], "order": [], "page": 1, "page_size": 10000, "status": "ok"}

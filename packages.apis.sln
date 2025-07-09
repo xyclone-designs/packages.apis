@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.SAPS", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.MunicipalMoney", "XycloneDesigns.Apis.MunicipalMoney\XycloneDesigns.Apis.MunicipalMoney.csproj", "{371EEE3D-E568-4D1A-BCE9-CF83A75BED5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis.Afrobarometer", "XycloneDesigns.Apis.Afrobarometer\XycloneDesigns.Apis.Afrobarometer.csproj", "{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.Afrobarometer", "XycloneDesigns.Apis.Afrobarometer\XycloneDesigns.Apis.Afrobarometer.csproj", "{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XycloneDesigns.Apis.ETenders", "XycloneDesigns.Apis.ETenders\XycloneDesigns.Apis.ETenders.csproj", "{6DBF603B-540B-4F30-A460-0C164196AC4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XycloneDesigns.Apis._Tests", "XycloneDesigns.Apis._Tests\XycloneDesigns.Apis._Tests.csproj", "{8B20316A-CB15-4EA0-9DCF-445595D8B677}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14AF4FAA-3857-45B6-8DD6-3D56D7BFAC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DBF603B-540B-4F30-A460-0C164196AC4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DBF603B-540B-4F30-A460-0C164196AC4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DBF603B-540B-4F30-A460-0C164196AC4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DBF603B-540B-4F30-A460-0C164196AC4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B20316A-CB15-4EA0-9DCF-445595D8B677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B20316A-CB15-4EA0-9DCF-445595D8B677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B20316A-CB15-4EA0-9DCF-445595D8B677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B20316A-CB15-4EA0-9DCF-445595D8B677}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

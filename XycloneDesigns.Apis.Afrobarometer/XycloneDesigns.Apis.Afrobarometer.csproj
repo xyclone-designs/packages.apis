@@ -32,6 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\XycloneDesigns.Apis.ETenders\XycloneDesigns.Apis.ETenders.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

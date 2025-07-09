@@ -1,1 +1,1 @@
-Companion package for Xyclone Designs Afrobarometer Api & xyclone-designs/database.afrobarometer github project
+Companion package for ETenders Api found at https://ocds-api.etenders.gov.za/

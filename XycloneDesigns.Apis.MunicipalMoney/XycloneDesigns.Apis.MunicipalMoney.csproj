@@ -27,7 +27,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />
+    <None Remove="Cubes\V2\uupe11d0.lc4~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.1.21" />
   </ItemGroup>
 
   <ItemGroup>
