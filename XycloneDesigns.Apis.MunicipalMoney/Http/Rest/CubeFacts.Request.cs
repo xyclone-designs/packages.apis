@@ -5,12 +5,14 @@ using System.Net.Http;
 
 using XycloneDesigns.Apis.MunicipalMoney.Http.Rest;
 
-namespace XycloneDesigns.Apis.ETenders.Http.Rest
+namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 {
 	public partial class CubeFacts
 	{
 		public class Request : MunicipalMoneyRest.Request
 		{
+			public new const string Path = MunicipalMoneyRest.Request.Path + "/cubes";
+
 			public class Parameters
 			{
 				public const string Cut = "cut";
@@ -30,6 +32,12 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 				}
 			}
 
+			public Request(string cubename)
+			{
+				CubeName = cubename;
+			}
+
+			public string CubeName { get; set; }
 			public Dictionary<string, object>? Cut { get; set; }
 			public string? Format { get; set; }
 			public int? Page { get; set; }
@@ -41,19 +49,19 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 				return new HttpRequestMessage
 				{
 					Method = HttpMethod.Get,
-					RequestUri = new Uri(string.Format("{0}?{1}", Path, string.Join('&', new string?[]
+					RequestUri = new Uri(string.Format("{0}/{1}/facts?{2}", Path, CubeName, string.Join('&', new string?[]
 					{
 						Cut is null ? null : string.Format("cut={0}", string.Join('|', Cut.Select(_ =>
 						{
 							return string.Format("{0}:\"{1}\"", _.Key, _.Value);
-						})),
+						}))),
 						Format is not null ? string.Format("format={0}", Format) : null,
 						Page.HasValue ? string.Format("page={0}", Page.Value) : null,
 						PageSize.HasValue ? string.Format("pageSize={0}", PageSize.Value) : null,
 						Order is null ? null : string.Format("order={0}", string.Join(',', Order.Select(_ =>
 						{
 							return string.Format("{0}:{1}", _.Key, _.Value ? "asc" : "desc");
-						}))
+						})))
 
 					}.OfType<string>())))
 				};

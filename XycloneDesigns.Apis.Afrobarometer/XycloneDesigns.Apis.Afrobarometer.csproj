@@ -27,12 +27,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.1.8" />
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.1.21" />
     <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\XycloneDesigns.Apis.ETenders\XycloneDesigns.Apis.ETenders.csproj" />
   </ItemGroup>
 
   <ItemGroup>

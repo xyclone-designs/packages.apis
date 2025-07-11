@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\XycloneDesigns.Apis.ETenders\XycloneDesigns.Apis.ETenders.csproj" />
+    <ProjectReference Include="..\XycloneDesigns.Apis.MunicipalMoney\XycloneDesigns.Apis.MunicipalMoney.csproj" />
   </ItemGroup>
 
 </Project>

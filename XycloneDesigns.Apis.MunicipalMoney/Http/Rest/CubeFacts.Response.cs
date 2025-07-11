@@ -3,13 +3,11 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-using XycloneDesigns.Apis.MunicipalMoney.Cubes;
-
 namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 {
 	public partial class CubeFacts
 	{
-		public class Response<TCube> : MunicipalMoneyRest.Response where TCube : Cube
+		public class Response : MunicipalMoneyRest.Response
 		{
             public class Json
             {
@@ -26,14 +24,14 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 			public Response() : base() { }
 			public Response(string response) : base(response) { }
 
-			[JsonProperty(Json.Cell), JsonPropertyName(Json.Cell)] public List<string> Cell { get; set; } = [];
-			[JsonProperty(Json.Data), JsonPropertyName(Json.Data)] public List<TCube> Data { get; set; } = [];
-			[JsonProperty(Json.Fields), JsonPropertyName(Json.Fields)] public List<string> Fields { get; set; } = [];
-            [JsonProperty(Json.Page), JsonPropertyName(Json.Page)] public int Page { get; set; }
-			[JsonProperty(Json.PageSize), JsonPropertyName(Json.PageSize)] public int PageSize { get; set; }
-			[JsonProperty(Json.Order), JsonPropertyName(Json.Order)] public List<string> Order { get; set; } = [];
-			[JsonProperty(Json.Status), JsonPropertyName(Json.Status)] public string Status { get; set; } = string.Empty;
-            [JsonProperty(Json.TotalFactCount), JsonPropertyName(Json.TotalFactCount)] public int TotalFactCount { get; set; }
+			[JsonProperty(Json.Cell), JsonPropertyName(Json.Cell)] public List<string>? Cell { get; set; }
+			[JsonProperty(Json.Data), JsonPropertyName(Json.Data)] public List<object>? Data { get; set; }
+			[JsonProperty(Json.Fields), JsonPropertyName(Json.Fields)] public List<string>? Fields { get; set; }
+            [JsonProperty(Json.Page), JsonPropertyName(Json.Page)] public int? Page { get; set; }
+			[JsonProperty(Json.PageSize), JsonPropertyName(Json.PageSize)] public int? PageSize { get; set; }
+			[JsonProperty(Json.Order), JsonPropertyName(Json.Order)] public List<string>? Order { get; set; }
+			[JsonProperty(Json.Status), JsonPropertyName(Json.Status)] public string? Status { get; set; }
+            [JsonProperty(Json.TotalFactCount), JsonPropertyName(Json.TotalFactCount)] public int? TotalFactCount { get; set; }
 		}
 	}
 }

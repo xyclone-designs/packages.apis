@@ -11,7 +11,6 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 		public class ResponseSingle : ETendersRest.Response 
 		{
 			public ResponseSingle() : base() { }
-			public ResponseSingle(HttpResponseMessage response) : this(response.Content.ReadAsStringAsync().GetAwaiter().GetResult()) { }
 			public ResponseSingle(string response) : base(response) { }
 
 			public Release? Release { get; set; }
@@ -19,7 +18,6 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 		public class ResponseMultiple : ETendersRest.Response 
 		{
 			public ResponseMultiple() : base() { }
-			public ResponseMultiple(HttpResponseMessage response) : this(response.Content.ReadAsStringAsync().GetAwaiter().GetResult()) { }
 			public ResponseMultiple(string response) : base(response) { }
 
 			public string? License { get; set; }

@@ -3,8 +3,6 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-using XycloneDesigns.Apis.MunicipalMoney.Cubes;
-
 namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 {
 	public partial class CubeMembersDemarcation
@@ -26,20 +24,14 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 			public Response() : base() { }
 			public Response(string response) : base(response) { }
 
-			[JsonProperty(Json.Cell), JsonPropertyName(Json.Cell)] public List<string> Cell { get; set; } = [];
-			[JsonProperty(Json.Data), JsonPropertyName(Json.Data)] public List<DataItem> Data { get; set; } = [];
-			[JsonProperty(Json.Fields), JsonPropertyName(Json.Fields)] public List<string> Fields { get; set; } = [];
-            [JsonProperty(Json.Page), JsonPropertyName(Json.Page)] public int Page { get; set; }
-			[JsonProperty(Json.PageSize), JsonPropertyName(Json.PageSize)] public int PageSize { get; set; }
-			[JsonProperty(Json.Order), JsonPropertyName(Json.Order)] public List<string> Order { get; set; } = [];
-			[JsonProperty(Json.Status), JsonPropertyName(Json.Status)] public string Status { get; set; } = string.Empty;
-            [JsonProperty(Json.TotalMemberCount), JsonPropertyName(Json.TotalMemberCount)] public int TotalMemberCount { get; set; }
-
-			public class DataItem
-			{
-				[JsonProperty(Cube.Keys.Demarcation.Code), JsonPropertyName(Cube.Keys.Demarcation.Code)] public string DemarcationCode { get; set; } = string.Empty;
-				[JsonProperty(Cube.Keys.Demarcation.Label), JsonPropertyName(Cube.Keys.Demarcation.Label)] public string DemarcationLabel { get; set; } = string.Empty;
-			}
+			[JsonProperty(Json.Cell), JsonPropertyName(Json.Cell)] public List<string>? Cell { get; set; }
+			[JsonProperty(Json.Data), JsonPropertyName(Json.Data)] public List<object>? Data { get; set; }
+			[JsonProperty(Json.Fields), JsonPropertyName(Json.Fields)] public List<string>? Fields { get; set; }
+            [JsonProperty(Json.Page), JsonPropertyName(Json.Page)] public int? Page { get; set; }
+			[JsonProperty(Json.PageSize), JsonPropertyName(Json.PageSize)] public int? PageSize { get; set; }
+			[JsonProperty(Json.Order), JsonPropertyName(Json.Order)] public List<string>? Order { get; set; }
+			[JsonProperty(Json.Status), JsonPropertyName(Json.Status)] public string? Status { get; set; } 
+            [JsonProperty(Json.TotalMemberCount), JsonPropertyName(Json.TotalMemberCount)] public int? TotalMemberCount { get; set; }
 		}
 	}
 }

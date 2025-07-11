@@ -5,7 +5,7 @@ using System.Net.Http;
 
 using XycloneDesigns.Apis.MunicipalMoney.Http.Rest;
 
-namespace XycloneDesigns.Apis.ETenders.Http.Rest
+namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 {
 	public partial class CubeAggregate
 	{
@@ -32,6 +32,12 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 				}
 			}
 
+			public Request(string cubename)
+			{
+				CubeName = cubename;
+			}
+
+			public string CubeName { get; set; }
 			public List<string>? Aggregates { get; set; }
 			public Dictionary<string, object>? Cut { get; set; }
 			public List<string>? Drilldown { get; set; }
@@ -45,7 +51,7 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 				return new HttpRequestMessage
 				{
 					Method = HttpMethod.Get,
-					RequestUri = new Uri(string.Format("{0}?{1}", Path, string.Join('&', new string?[]
+					RequestUri = new Uri(string.Format("{0}/{1}/aggregate?{2}", Path, CubeName, string.Join('&', new string?[]
 					{
 						Aggregates is null ? null : string.Format("aggregates={0}", string.Join('|', Aggregates.Select(_ =>
 						{

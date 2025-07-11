@@ -6,7 +6,7 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 	{
 		public class Request : ApiRequest 
 		{
-			public const string Path = "https://municipaldata.treasury.gov.za/api";
+			public const string Path = "https://municipaldata.treasury.gov.za/api/cubes";
 		}
 	}
 }
