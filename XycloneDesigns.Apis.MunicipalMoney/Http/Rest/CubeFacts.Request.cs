@@ -11,8 +11,6 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 	{
 		public class Request : MunicipalMoneyRest.Request
 		{
-			public new const string Path = MunicipalMoneyRest.Request.Path + "/cubes";
-
 			public class Parameters
 			{
 				public const string Cut = "cut";

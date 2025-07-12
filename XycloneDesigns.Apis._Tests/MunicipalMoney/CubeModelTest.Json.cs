@@ -1,6 +1,7 @@
 using Newtonsoft.Json.Linq;
 
 using System.IO;
+using System.Text.Json;
 
 using Xunit;
 
@@ -42,6 +43,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 			string json = await streamreader.ReadToEndAsync();
 
 			JObject.Parse(json).ToObject<CubeAggregate.Response>();
+			JsonSerializer.Deserialize<CubeAggregate.Response>(json);
 		}
 
 
@@ -77,6 +79,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 			string json = await streamreader.ReadToEndAsync();
 
 			JObject.Parse(json).ToObject<CubeFacts.Response>();
+			JsonSerializer.Deserialize<CubeFacts.Response>(json);
 		}
 
 
@@ -92,6 +95,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 			string json = await streamreader.ReadToEndAsync();
 
 			JObject.Parse(json).ToObject<CubeMembersDemarcation.Response>();
+			JsonSerializer.Deserialize<CubeMembersDemarcation.Response>(json);
 		}
 
 
@@ -127,6 +131,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 			string json = await streamreader.ReadToEndAsync();
 
 			JObject.Parse(json).ToObject<CubeModel.Response>();
+			JsonSerializer.Deserialize<CubeModel.Response>(json);
 		}
 	}
 }

@@ -1,0 +1,307 @@
+{
+	"uri": "https://ocds-api.etenders.gov.za/api/OCDSReleases?PageNumber=1&PageSize=50&dateFrom=2024-01-01&dateTo=2024-03-31",
+	"version": "1.1",
+	"publishedDate": "2025-07-11T22:21:47Z",
+	"publisher": {
+		"name": "National Treasury (South Africa)",
+		"uri": "https://data.etenders.gov.za/"
+	},
+	"license": "https://opendatacommons.org/licenses/pddl/1-0/111",
+	"publicationPolicy": "https://data.etenders.gov.za//Home/LearnMore",
+	"releases": [
+		{
+			"ocid": "ocds-9t57fa-86366",
+			"id": "ocds-9t57fa-86366-2024-03-31",
+			"date": "2024-03-31T00:00:00Z",
+			"tag": [ "compiled" ],
+			"initiationType": "tender",
+			"tender": {
+				"id": "86366",
+				"title": "CI-AD-0052",
+				"status": "",
+				"mainProcurementCategory": "works",
+				"additionalProcurementCategories": [ "works" ],
+				"description": "The Construction of 10 New Family Chalets and Infrastructure at Lendlovu Lodge Phase One in Addo Elephant National Park, Eastern Cape",
+				"value": {
+					"amount": 0,
+					"currency": "ZAR"
+				},
+				"documents": [
+					{
+						"id": "42a1c95a-e850-40f6-9040-4f090c518afb",
+						"documentType": "basic",
+						"title": "REVISED Bid document CI-AD-0052 Construction of 10 New Chalets at Lendlovu Lodge Phase 1.pdf",
+						"description": "REVISED Bid document CI-AD-0052 Construction of 10 New Chalets at Lendlovu Lodge Phase 1.pdf",
+						"url": "https://www.etenders.gov.za/home/Download?blobName=42a1c95a-e850-40f6-9040-4f090c518afb.pdf&downloadedFileName=REVISED%20Bid%20document%20CI-AD-0052%20Construction%20of%2010%20New%20Chalets%20at%20Lendlovu%20Lodge%20Phase%201.pdf",
+						"datePublished": "2024-04-16T10:02:13Z",
+						"dateModified": "2024-04-16T10:02:13Z",
+						"format": "pdf",
+						"language": "en"
+					}
+				],
+				"tenderPeriod": {
+					"startDate": "2024-03-31T00:00:00Z",
+					"endDate": "2024-05-13T10:00:00Z"
+				},
+				"tenderers": [],
+				"procuringEntity": {
+					"id": "617",
+					"name": "South African National Parks"
+				},
+				"procurementMethod": "open",
+				"procurementMethodDetails": "Request for Bid(Open-Tender)"
+			},
+			"planning": {
+				"rationale": "",
+				"budget": { "description": " - " },
+				"documents": []
+			},
+			"parties": [
+				{
+					"name": "ALEXANDER MAINTENANCE AND ELECTRICAL SERVICES",
+					"id": "50416",
+					"identifier": { "legalName": "ALEXANDER MAINTENANCE AND ELECTRICAL SERVICES" },
+					"address": { "countryName": "South Africa" },
+					"contactPoint": {
+						"name": "Garret Kobe",
+						"telephone": "0124265132",
+						"email": "garret.kobe@sanparks.org",
+						"faxNumber": "N/A",
+						"url": "https://sanparks.org"
+					},
+					"roles": [ "supplier" ]
+				}
+			],
+			"buyer": {
+				"id": "617",
+				"name": "South African National Parks"
+			},
+			"language": "en-za",
+			"awards": [
+				{
+					"id": "50416",
+					"title": "ALEXANDER MAINTENANCE AND ELECTRICAL SERVICES",
+					"status": "active",
+					"description": "QSE",
+					"value": {
+						"amount": 2998261485.00,
+						"currency": "ZAR"
+					},
+					"suppliers": [
+						{
+							"id": "35141",
+							"name": "ALEXANDER MAINTENANCE AND ELECTRICAL SERVICES"
+						}
+					]
+				}
+			],
+			"contracts": []
+		},
+		{
+			"ocid": "ocds-9t57fa-86365",
+			"id": "ocds-9t57fa-86365-2024-03-31",
+			"date": "2024-03-31T00:00:00Z",
+			"tag": [ "compiled" ],
+			"initiationType": "tender",
+			"tender": {
+				"id": "86365",
+				"title": "ME-AD-0089",
+				"status": "",
+				"mainProcurementCategory": "works",
+				"additionalProcurementCategories": [ "works" ],
+				"description": "Renovations of 10 Chalets in Addo Rest Camp at the Addo Elephant National Park, Eastern Cape Province",
+				"value": {
+					"amount": 0,
+					"currency": "ZAR"
+				},
+				"documents": [
+					{
+						"id": "d252e12e-a081-432c-b59d-1395b8f8f4ac",
+						"documentType": "basic",
+						"title": "Tender Advert ME-AD-0089 - Renovations of 10 Chalets at Addo Elephant National Park.pdf",
+						"description": "Tender Advert ME-AD-0089 - Renovations of 10 Chalets at Addo Elephant National Park.pdf",
+						"url": "https://www.etenders.gov.za/home/Download?blobName=d252e12e-a081-432c-b59d-1395b8f8f4ac.pdf&downloadedFileName=Tender%20Advert%20ME-AD-0089%20-%20Renovations%20of%2010%20Chalets%20at%20Addo%20Elephant%20National%20Park.pdf",
+						"datePublished": "2024-03-31T22:10:34Z",
+						"dateModified": "2024-03-31T22:10:34Z",
+						"format": "pdf",
+						"language": "en"
+					}
+				],
+				"tenderPeriod": {
+					"startDate": "2024-03-31T00:00:00Z",
+					"endDate": "2024-05-02T11:00:00Z"
+				},
+				"tenderers": [],
+				"procuringEntity": {
+					"id": "617",
+					"name": "South African National Parks"
+				},
+				"procurementMethod": "open",
+				"procurementMethodDetails": "Request for Bid(Open-Tender)"
+			},
+			"planning": {
+				"rationale": "",
+				"budget": { "description": " - " },
+				"documents": []
+			},
+			"parties": [
+				{
+					"name": " (MBOKOTHWANE CONSTRUCTION AND CIVILS)",
+					"id": "38192",
+					"identifier": { "legalName": " (MBOKOTHWANE CONSTRUCTION AND CIVILS)" },
+					"address": { "countryName": "South Africa" },
+					"contactPoint": {
+						"name": "GARRET KOBE",
+						"telephone": "0124265132",
+						"email": "garret.kobe@sanparks.org",
+						"faxNumber": "N/A",
+						"url": "https://sanparks.org"
+					},
+					"roles": [ "supplier" ]
+				}
+			],
+			"buyer": {
+				"id": "617",
+				"name": "South African National Parks"
+			},
+			"language": "en-za",
+			"awards": [
+				{
+					"id": "38192",
+					"title": " (MBOKOTHWANE CONSTRUCTION AND CIVILS)",
+					"status": "active",
+					"description": "EME",
+					"value": {
+						"amount": 642765236.00,
+						"currency": "ZAR"
+					},
+					"suppliers": [
+						{
+							"id": "80741",
+							"name": " (MBOKOTHWANE CONSTRUCTION AND CIVILS)"
+						}
+					]
+				}
+			],
+			"contracts": []
+		},
+		{
+			"ocid": "ocds-9t57fa-86364",
+			"id": "ocds-9t57fa-86364-2024-03-31",
+			"date": "2024-03-31T00:00:00Z",
+			"tag": [ "compiled" ],
+			"initiationType": "tender",
+			"tender": {
+				"id": "86364",
+				"title": "LGSETA/NW/OFFICE/SPACE/2023/2024-11 (READVERT)",
+				"status": "",
+				"mainProcurementCategory": "services",
+				"additionalProcurementCategories": [ "services" ],
+				"description": "REQUEST FOR PROPOSAL FOR FREE STATE OFFICE SPACE FOR A PERIOD OF PERIOD OF FIVE (05) YEARS (READVERT)",
+				"value": {
+					"amount": 0,
+					"currency": "ZAR"
+				},
+				"documents": [
+					{
+						"id": "0e3b21d3-2c10-4315-8443-c87ff5be17da",
+						"documentType": "basic",
+						"title": "LGSETA-NW-OFFICE-SPACE-2023-2024-11 (READVERT).pdf",
+						"description": "LGSETA-NW-OFFICE-SPACE-2023-2024-11 (READVERT).pdf",
+						"url": "https://www.etenders.gov.za/home/Download?blobName=0e3b21d3-2c10-4315-8443-c87ff5be17da.pdf&downloadedFileName=LGSETA-NW-OFFICE-SPACE-2023-2024-11%20%28READVERT%29.pdf",
+						"datePublished": "2024-03-31T22:02:54Z",
+						"dateModified": "2024-03-31T22:02:54Z",
+						"format": "pdf",
+						"language": "en"
+					}
+				],
+				"tenderPeriod": {
+					"startDate": "2024-03-31T00:00:00Z",
+					"endDate": "2024-04-26T12:00:00Z"
+				},
+				"tenderers": [],
+				"procuringEntity": {
+					"id": "362",
+					"name": "Local Government Education and Training Authority"
+				},
+				"procurementMethod": "open",
+				"procurementMethodDetails": "Request for Proposal"
+			},
+			"planning": {
+				"rationale": "",
+				"budget": { "description": " - " },
+				"documents": []
+			},
+			"parties": [],
+			"buyer": {
+				"id": "362",
+				"name": "Local Government Education and Training Authority"
+			},
+			"language": "en-za",
+			"awards": [],
+			"contracts": []
+		},
+		{
+			"ocid": "ocds-9t57fa-86363",
+			"id": "ocds-9t57fa-86363-2024-03-31",
+			"date": "2024-03-31T00:00:00Z",
+			"tag": [ "compiled" ],
+			"initiationType": "tender",
+			"tender": {
+				"id": "86363",
+				"title": "LGSETA/LEGAL-PANEL/2023/2024-04",
+				"status": "",
+				"mainProcurementCategory": "",
+				"additionalProcurementCategories": [ "consultingServices" ],
+				"description": "REQUEST FOR PROPOSAL FOR APPPOINTMENT OF A PANEL OF NINE (09) LEGAL EXPERTS FOR THE PROVISION OF VARIOUS LEGAL SERVICES FOR A PERIOD OF THREE (03) YEARS (READVERT)",
+				"value": {
+					"amount": 0,
+					"currency": "ZAR"
+				},
+				"documents": [
+					{
+						"id": "f4ef73d5-5b32-4591-ab27-5dfc6ac0cc6c",
+						"documentType": "basic",
+						"title": "LGSETA-LEGAL-PANEL-2023-2024-04 (READVERT).pdf",
+						"description": "LGSETA-LEGAL-PANEL-2023-2024-04 (READVERT).pdf",
+						"url": "https://www.etenders.gov.za/home/Download?blobName=f4ef73d5-5b32-4591-ab27-5dfc6ac0cc6c.pdf&downloadedFileName=LGSETA-LEGAL-PANEL-2023-2024-04%20%28READVERT%29.pdf",
+						"datePublished": "2024-03-31T22:09:27Z",
+						"dateModified": "2024-03-31T22:09:27Z",
+						"format": "pdf",
+						"language": "en"
+					}
+				],
+				"tenderPeriod": {
+					"startDate": "2024-03-31T00:00:00Z",
+					"endDate": "2024-04-29T12:00:00Z"
+				},
+				"tenderers": [
+					{
+						"name": "Lebea Incorporated Attorneys ",
+						"id": "18488"
+					}
+				],
+				"procuringEntity": {
+					"id": "362",
+					"name": "Local Government Education and Training Authority"
+				},
+				"procurementMethod": "open",
+				"procurementMethodDetails": "Request for Proposal"
+			},
+			"planning": {
+				"rationale": "",
+				"budget": { "description": " - " },
+				"documents": []
+			},
+			"parties": [],
+			"buyer": {
+				"id": "362",
+				"name": "Local Government Education and Training Authority"
+			},
+			"language": "en-za",
+			"awards": [],
+			"contracts": []
+		}
+	],
+	"links": { "next": "https://ocds-api.etenders.gov.za/api/OCDSReleases?PageNumber=2&PageSize=50&dateFrom=2024-01-01&dateTo=2024-03-31" }
+}

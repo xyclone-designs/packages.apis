@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 
 using XycloneDesigns.Apis.ETenders.Models;
 
@@ -21,7 +20,7 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 			public ResponseMultiple(string response) : base(response) { }
 
 			public string? License { get; set; }
-			public List<Link>? Links { get; set; }
+			public Link? Links { get; set; }
 			public Publisher? Publisher { get; set; }
 			public DateTime? PublishedDate { get; set; }
 			public string? PublicationPolicy { get; set; }

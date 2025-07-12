@@ -1,0 +1,56 @@
+{
+	"ocid": "ocds-9t57fa-86364",
+	"id": "ocds-9t57fa-86364-2024-03-31",
+	"date": "2024-03-31T00:00:00Z",
+	"tag": [ "compiled" ],
+	"initiationType": "tender",
+	"tender": {
+		"id": "86364",
+		"title": "LGSETA/NW/OFFICE/SPACE/2023/2024-11 (READVERT)",
+		"status": "",
+		"mainProcurementCategory": "services",
+		"additionalProcurementCategories": [ "services" ],
+		"description": "REQUEST FOR PROPOSAL FOR FREE STATE OFFICE SPACE FOR A PERIOD OF PERIOD OF FIVE (05) YEARS (READVERT)",
+		"value": {
+			"amount": 0,
+			"currency": "ZAR"
+		},
+		"documents": [
+			{
+				"id": "0e3b21d3-2c10-4315-8443-c87ff5be17da",
+				"documentType": "basic",
+				"title": "LGSETA-NW-OFFICE-SPACE-2023-2024-11 (READVERT).pdf",
+				"description": "LGSETA-NW-OFFICE-SPACE-2023-2024-11 (READVERT).pdf",
+				"url": "https://www.etenders.gov.za/home/Download?blobName=0e3b21d3-2c10-4315-8443-c87ff5be17da.pdf&downloadedFileName=LGSETA-NW-OFFICE-SPACE-2023-2024-11%20%28READVERT%29.pdf",
+				"datePublished": "2024-03-31T22:02:54Z",
+				"dateModified": "2024-03-31T22:02:54Z",
+				"format": "pdf",
+				"language": "en"
+			}
+		],
+		"tenderPeriod": {
+			"startDate": "2024-03-31T00:00:00Z",
+			"endDate": "2024-04-26T12:00:00Z"
+		},
+		"tenderers": [],
+		"procuringEntity": {
+			"id": "362",
+			"name": "Local Government Education and Training Authority"
+		},
+		"procurementMethod": "open",
+		"procurementMethodDetails": "Request for Proposal"
+	},
+	"planning": {
+		"rationale": "",
+		"budget": { "description": " - " },
+		"documents": []
+	},
+	"parties": [],
+	"buyer": {
+		"id": "362",
+		"name": "Local Government Education and Training Authority"
+	},
+	"language": "en-za",
+	"awards": [],
+	"contracts": []
+}

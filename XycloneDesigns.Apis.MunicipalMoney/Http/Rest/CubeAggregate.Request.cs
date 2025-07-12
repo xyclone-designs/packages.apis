@@ -44,7 +44,7 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 			public string? Format { get; set; }
 			public int? Page { get; set; }
 			public int? PageSize { get; set; }
-			public Dictionary<string, bool>? Order { get; set; }
+			public Dictionary<string, string>? Order { get; set; }
 
 			public override HttpRequestMessage ToHttpRequestMessage()
 			{
@@ -67,7 +67,7 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 						PageSize.HasValue ? string.Format("pageSize={0}", PageSize.Value) : null,
 						Order is null ? null : string.Format("order={0}", string.Join(',', Order.Select(_ =>
 						{
-							return string.Format("{0}:{1}", _.Key, _.Value ? "asc" : "desc");
+							return string.Format("{0}:{1}", _.Key, _.Value);
 						})))
 
 					}.OfType<string>())))

@@ -1,4 +1,5 @@
-﻿
+﻿using Newtonsoft.Json.Linq;
+
 namespace XycloneDesigns.Apis.IEC.Tables
 {
 	[SQLite.Table(SQL.Table)]
