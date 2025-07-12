@@ -1,4 +1,8 @@
-﻿using XycloneDesigns.Apis.Afrobarometer.Enums;
+﻿using Newtonsoft.Json;
+
+using System.Text.Json.Serialization;
+
+using XycloneDesigns.Apis.Afrobarometer.Enums;
 
 namespace XycloneDesigns.Apis.Afrobarometer.Tables
 {
@@ -15,9 +19,9 @@ namespace XycloneDesigns.Apis.Afrobarometer.Tables
 			public const string Column_Round = "round";
 		}
 
-		[SQLite.Column(nameof(List_PkVariable_Record))] public string? List_PkVariable_Record { get; set; }
-		[SQLite.Column(nameof(PkLanguage))] public int? PkLanguage { get; set; }
-		[SQLite.Column(nameof(PkSurvey))] public int? PkSurvey { get; set; }
-		[SQLite.Column(nameof(Round))] public Rounds? Round { get; set; }
+		[JsonProperty(SQL.Column_List_PkVariable_Record), JsonPropertyName(SQL.Column_List_PkVariable_Record), SQLite.Column(SQL.Column_List_PkVariable_Record)] public string? List_PkVariable_Record { get; set; }
+		[JsonProperty(SQL.Column_PkLanguage), JsonPropertyName(SQL.Column_PkLanguage), SQLite.Column(SQL.Column_PkLanguage)] public int? PkLanguage { get; set; }
+		[JsonProperty(SQL.Column_PkSurvey), JsonPropertyName(SQL.Column_PkSurvey), SQLite.Column(SQL.Column_PkSurvey)] public int? PkSurvey { get; set; }
+		[JsonProperty(SQL.Column_Round), JsonPropertyName(SQL.Column_Round), SQLite.Column(SQL.Column_Round)] public Rounds? Round { get; set; }
 	}
 }

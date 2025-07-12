@@ -6,7 +6,7 @@ namespace XycloneDesigns.Apis.SAPS.Http.Rest
 {
 	public partial class PoliceStations 
 	{
-		public class Response : SAPSRest.Response
+		public class Response : SAPSRest.Response<PoliceStation>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<PoliceStation> queryable)

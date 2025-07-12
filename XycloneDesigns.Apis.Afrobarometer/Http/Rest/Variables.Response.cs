@@ -7,7 +7,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http.Rest
 {
 	public partial class Variables 
 	{
-		public class Response : AfrobarometerRest.Response
+		public class Response : AfrobarometerRest.Response<Variable>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<Variable> queryable)

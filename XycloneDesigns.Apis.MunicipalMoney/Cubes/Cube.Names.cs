@@ -11,8 +11,8 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Cubes
 			public const string AgedDebtorAnalysisV2 = "aged_debtor_v2";
 			public const string AuditOpinions = "audit_opinions";
 			public const string BalanceSheet = "bsheet";
-			public const string Capital = "capital";
-			public const string CapitalV2 = "capital_v2";
+			public const string CapitalAquisition = "capital";
+			public const string CapitalAquisitionV2 = "capital_v2";
 			public const string CashFlow = "cflow";
 			public const string CashFlowV2 = "cflow_v2";
 			public const string ConditionalGrants = "conditional_grants";

@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V1
 {
-	public class Capital : Cube
+	public class CapitalAquisition : Cube
 	{
 		[JsonProperty(Keys.AmountType.Code), JsonPropertyName(Keys.AmountType.Code)] public string? AmountTypeCode { get; set; }
 		[JsonProperty(Keys.AmountType.Label), JsonPropertyName(Keys.AmountType.Label)] public string? AmountTypeLabel { get; set; }
@@ -34,5 +36,38 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V1
 		[JsonProperty(Keys.Opinion.Label), JsonPropertyName(Keys.Opinion.Label)] public string? OpinionLabel { get; set; }
 		[JsonProperty(Keys.PeriodLength.Length), JsonPropertyName(Keys.PeriodLength.Length)] public string? PeriodLength { get; set; }
 		[JsonProperty(Keys.Roles.Role), JsonPropertyName(Keys.Roles.Role)] public string? RolesRole { get; set; }
+
+		public static IEnumerable<string> KeysEnumerable
+		{
+			get => Enumerable.Empty<string>()
+				.Append(Keys.AmountType.Code)
+				.Append(Keys.AmountType.Label)
+				.Append(Keys.CustomerGroup.Code)
+				.Append(Keys.Dates.Date)
+				.Append(Keys.Demarcation.Code)
+				.Append(Keys.Demarcation.CodeNew)
+				.Append(Keys.Demarcation.CodeOld)
+				.Append(Keys.Demarcation.CodeTransitionNew)
+				.Append(Keys.Demarcation.CodeTransitionOld)
+				.Append(Keys.Demarcation.Label)
+				.Append(Keys.FinancialPeriod.Period)
+				.Append(Keys.FinancialYearEnd.Year)
+				.Append(Keys.Function.CategoryLabel)
+				.Append(Keys.Function.Code)
+				.Append(Keys.Function.Label)
+				.Append(Keys.Function.SubcategoryLabel)
+				.Append(Keys.Grant.Code)
+				.Append(Keys.Grant.Label)
+				.Append(Keys.Item.Code)
+				.Append(Keys.Item.Composition)
+				.Append(Keys.Item.Label)
+				.Append(Keys.Item.PositionInReturnForm)
+				.Append(Keys.Item.ReturnFormStructure)
+				.Append(Keys.Opinion.AuditorGeneralsReportURL)
+				.Append(Keys.Opinion.Code)
+				.Append(Keys.Opinion.Label)
+				.Append(Keys.PeriodLength.Length)
+				.Append(Keys.Roles.Role);
+		}
 	}
 }

@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V2
@@ -19,5 +21,23 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V2
 		[JsonProperty(Keys.Item.Code), JsonPropertyName(Keys.Item.Code)] public string? ItemCode { get; set; }
 		[JsonProperty(Keys.Item.Composition), JsonPropertyName(Keys.Item.Composition)] public string? ItemComposition { get; set; }
 		[JsonProperty(Keys.PeriodLength.Length), JsonPropertyName(Keys.PeriodLength.Length)] public string? PeriodLength { get; set; }
+
+		public static IEnumerable<string> KeysEnumerable
+		{
+			get => Enumerable.Empty<string>()
+				.Append(Keys.AmountType.Code)
+				.Append(Keys.AmountType.Label)
+				.Append(Keys.CapitalType.Code)
+				.Append(Keys.CapitalType.Label)
+				.Append(Keys.Demarcation.Code)
+				.Append(Keys.Demarcation.Label)
+				.Append(Keys.FinancialPeriod.Period)
+				.Append(Keys.FinancialYearEnd.Year)
+				.Append(Keys.Function.Code)
+				.Append(Keys.Function.Label)
+				.Append(Keys.Item.Code)
+				.Append(Keys.Item.Composition)
+				.Append(Keys.PeriodLength.Length);
+		}
 	}
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
+using System;
+using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.IEC.Tables
 {
@@ -28,15 +31,15 @@ namespace XycloneDesigns.Apis.IEC.Tables
             public const string Regional = "regional";
         }
 
-        [SQLite.Column(SQL.Column_Abbr)] public string? Abbr { get; set; }
-		[SQLite.Column(SQL.Column_Date)] public string? Date { get; set; }
-		[SQLite.Column(SQL.Column_List_PkBallot)] public string? List_PkBallot { get; set; }
-        [SQLite.Column(SQL.Column_List_PkMunicipality_PkParty)] public string? List_PkMunicipality_PkParty { get; set; }
-        [SQLite.Column(SQL.Column_List_PkParty_Designation_NationalAllocation)] public string? List_PkParty_Designation_NationalAllocation { get; set; }
-        [SQLite.Column(SQL.Column_List_PkParty_IdProvince_ProvincialAllocation)] public string? List_PkParty_IdProvince_ProvincialAllocation { get; set; }
-        [SQLite.Column(SQL.Column_List_PkParty_IdProvince_RegionalAllocation)] public string? List_PkParty_IdProvince_RegionalAllocation { get; set; }
-        [SQLite.Column(SQL.Column_Name)] public string? Name { get; set; }
-        [SQLite.Column(SQL.Column_Type)] public string? Type { get; set; }
+        [JsonProperty(SQL.Column_Abbr), JsonPropertyName(SQL.Column_Abbr), SQLite.Column(SQL.Column_Abbr)] public string? Abbr { get; set; }
+		[JsonProperty(SQL.Column_Date), JsonPropertyName(SQL.Column_Date), SQLite.Column(SQL.Column_Date)] public string? Date { get; set; }
+		[JsonProperty(SQL.Column_List_PkBallot), JsonPropertyName(SQL.Column_List_PkBallot), SQLite.Column(SQL.Column_List_PkBallot)] public string? List_PkBallot { get; set; }
+        [JsonProperty(SQL.Column_List_PkMunicipality_PkParty), JsonPropertyName(SQL.Column_List_PkMunicipality_PkParty), SQLite.Column(SQL.Column_List_PkMunicipality_PkParty)] public string? List_PkMunicipality_PkParty { get; set; }
+        [JsonProperty(SQL.Column_List_PkParty_Designation_NationalAllocation), JsonPropertyName(SQL.Column_List_PkParty_Designation_NationalAllocation), SQLite.Column(SQL.Column_List_PkParty_Designation_NationalAllocation)] public string? List_PkParty_Designation_NationalAllocation { get; set; }
+        [JsonProperty(SQL.Column_List_PkParty_IdProvince_ProvincialAllocation), JsonPropertyName(SQL.Column_List_PkParty_IdProvince_ProvincialAllocation), SQLite.Column(SQL.Column_List_PkParty_IdProvince_ProvincialAllocation)] public string? List_PkParty_IdProvince_ProvincialAllocation { get; set; }
+        [JsonProperty(SQL.Column_List_PkParty_IdProvince_RegionalAllocation), JsonPropertyName(SQL.Column_List_PkParty_IdProvince_RegionalAllocation), SQLite.Column(SQL.Column_List_PkParty_IdProvince_RegionalAllocation)] public string? List_PkParty_IdProvince_RegionalAllocation { get; set; }
+        [JsonProperty(SQL.Column_Name), JsonPropertyName(SQL.Column_Name), SQLite.Column(SQL.Column_Name)] public string? Name { get; set; }
+        [JsonProperty(SQL.Column_Type), JsonPropertyName(SQL.Column_Type), SQLite.Column(SQL.Column_Type)] public string? Type { get; set; }
 
         public static string? ToType(string? row)
         {

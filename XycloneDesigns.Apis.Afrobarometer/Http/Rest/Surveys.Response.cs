@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http.Rest
 {
 	public partial class Surveys 
 	{
-		public class Response : AfrobarometerRest.Response
+		public class Response : AfrobarometerRest.Response<Survey>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<Survey> queryable)

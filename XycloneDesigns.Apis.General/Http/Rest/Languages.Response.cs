@@ -6,7 +6,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 {
 	public partial class Languages 
 	{
-		public class Response : GeneralRest.Response<object>
+		public class Response : GeneralRest.Response<Language>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<Language> queryable)

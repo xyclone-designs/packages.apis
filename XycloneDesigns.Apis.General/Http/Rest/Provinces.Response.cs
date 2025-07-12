@@ -7,7 +7,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 {
 	public partial class Provinces 
 	{
-		public class Response : GeneralRest.Response<object>
+		public class Response : GeneralRest.Response<Province>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<Province> queryable)

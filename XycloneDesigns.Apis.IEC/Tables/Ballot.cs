@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.IEC.Tables
 {
@@ -36,35 +39,35 @@ namespace XycloneDesigns.Apis.IEC.Tables
         private int? _VotesTotal;
         private int? _VotesValid;
 
-		[SQLite.Column(SQL.Column_List_PkParty_Votes)] public string? List_PkParty_Votes { get; set; }
-		[SQLite.Column(SQL.Column_List_PkParty_Seats)] public string? List_PkParty_Seats { get; set; }
-		[SQLite.Column(SQL.Column_PkElectoralEvent)] public int? PkElectoralEvent { get; set; }
-        [SQLite.Column(SQL.Column_PkMunicipality)] public int? PkMunicipality { get; set; }
-        [SQLite.Column(SQL.Column_PkProvince)] public int? PkProvince { get; set; }
-        [SQLite.Column(SQL.Column_PkVotingDistrict)] public int? PkVotingDistrict { get; set; }
-        [SQLite.Column(SQL.Column_PkWard)] public int? PkWard { get; set; }
-        [SQLite.Column(SQL.Column_Type)] public string? Type { get; set; }
-        [SQLite.Column(SQL.Column_VotersRegistered)] public int? VotersRegistered 
+		[JsonProperty(SQL.Column_List_PkParty_Votes), JsonPropertyName(SQL.Column_List_PkParty_Votes), SQLite.Column(SQL.Column_List_PkParty_Votes)] public string? List_PkParty_Votes { get; set; }
+		[JsonProperty(SQL.Column_List_PkParty_Seats), JsonPropertyName(SQL.Column_List_PkParty_Seats), SQLite.Column(SQL.Column_List_PkParty_Seats)] public string? List_PkParty_Seats { get; set; }
+		[JsonProperty(SQL.Column_PkElectoralEvent), JsonPropertyName(SQL.Column_PkElectoralEvent), SQLite.Column(SQL.Column_PkElectoralEvent)] public int? PkElectoralEvent { get; set; }
+        [JsonProperty(SQL.Column_PkMunicipality), JsonPropertyName(SQL.Column_PkMunicipality), SQLite.Column(SQL.Column_PkMunicipality)] public int? PkMunicipality { get; set; }
+        [JsonProperty(SQL.Column_PkProvince), JsonPropertyName(SQL.Column_PkProvince), SQLite.Column(SQL.Column_PkProvince)] public int? PkProvince { get; set; }
+        [JsonProperty(SQL.Column_PkVotingDistrict), JsonPropertyName(SQL.Column_PkVotingDistrict), SQLite.Column(SQL.Column_PkVotingDistrict)] public int? PkVotingDistrict { get; set; }
+        [JsonProperty(SQL.Column_PkWard), JsonPropertyName(SQL.Column_PkWard), SQLite.Column(SQL.Column_PkWard)] public int? PkWard { get; set; }
+        [JsonProperty(SQL.Column_Type), JsonPropertyName(SQL.Column_Type), SQLite.Column(SQL.Column_Type)] public string? Type { get; set; }
+        [JsonProperty(SQL.Column_VotersRegistered), JsonPropertyName(SQL.Column_VotersRegistered), SQLite.Column(SQL.Column_VotersRegistered)] public int? VotersRegistered 
         {
             set => _VotersRegistered = value;
             get => _VotersRegistered;
         }
-        [SQLite.Column(SQL.Column_VotesMEC7)] public int? VotesMEC7 
+        [JsonProperty(SQL.Column_VotesMEC7), JsonPropertyName(SQL.Column_VotesMEC7), SQLite.Column(SQL.Column_VotesMEC7)] public int? VotesMEC7 
         { 
             set => _VotesMEC7 = value;
             get => _VotesMEC7;
         }
-        [SQLite.Column(SQL.Column_VotesSection24A)] public int? VotesSection24A 
+        [JsonProperty(SQL.Column_VotesSection24A), JsonPropertyName(SQL.Column_VotesSection24A), SQLite.Column(SQL.Column_VotesSection24A)] public int? VotesSection24A 
         { 
             set => _VotesSection24A = value;
             get => _VotesSection24A;
         }
-        [SQLite.Column(SQL.Column_VotesSpecial)] public int? VotesSpecial 
+        [JsonProperty(SQL.Column_VotesSpecial), JsonPropertyName(SQL.Column_VotesSpecial), SQLite.Column(SQL.Column_VotesSpecial)] public int? VotesSpecial 
         { 
             set => _VotesSpecial = value;
             get => _VotesSpecial;
         }
-        [SQLite.Column(SQL.Column_VotesSpoilt)] public int? VotesSpoilt 
+        [JsonProperty(SQL.Column_VotesSpoilt), JsonPropertyName(SQL.Column_VotesSpoilt), SQLite.Column(SQL.Column_VotesSpoilt)] public int? VotesSpoilt 
         { 
             set => _VotesSpoilt = value;
             get => _VotesSpoilt ??= true switch
@@ -74,7 +77,7 @@ namespace XycloneDesigns.Apis.IEC.Tables
                 _ => new int?()
             };
         }
-        [SQLite.Column(SQL.Column_VotesTotal)] public int? VotesTotal 
+        [JsonProperty(SQL.Column_VotesTotal), JsonPropertyName(SQL.Column_VotesTotal), SQLite.Column(SQL.Column_VotesTotal)] public int? VotesTotal 
         { 
             set => _VotesTotal = value;
             get => _VotesTotal ??= true switch
@@ -85,7 +88,7 @@ namespace XycloneDesigns.Apis.IEC.Tables
                 _ => new int?()
             };
         }
-        [SQLite.Column(SQL.Column_VotesValid)] public int? VotesValid 
+        [JsonProperty(SQL.Column_VotesValid), JsonPropertyName(SQL.Column_VotesValid), SQLite.Column(SQL.Column_VotesValid)] public int? VotesValid 
         { 
             set => _VotesValid = value;
             get => _VotesValid ??= List_PkParty_Votes?

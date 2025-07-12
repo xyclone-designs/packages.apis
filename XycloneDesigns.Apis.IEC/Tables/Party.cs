@@ -1,4 +1,7 @@
-﻿
+﻿using Newtonsoft.Json;
+
+using System.Text.Json.Serialization;
+
 namespace XycloneDesigns.Apis.IEC.Tables
 {
 	[SQLite.Table(SQL.Table)]
@@ -19,14 +22,14 @@ namespace XycloneDesigns.Apis.IEC.Tables
 			public const string Column_UrlLogo = "urlLogo";
 		}
 		
-		[SQLite.Column(SQL.Column_Abbr)] public string? Abbr { get; set; }
-		[SQLite.Column(SQL.Column_Color)] public string? Color { get; set; }
-		[SQLite.Column(SQL.Column_Name)] public string? Name { get; set; }
-        [SQLite.Column(SQL.Column_DateEstablished)] public string? DateEstablished { get; set; }
-        [SQLite.Column(SQL.Column_DateDisestablished)] public string? DateDisestablished { get; set; }
-        [SQLite.Column(SQL.Column_Headquarters)] public string? Headquarters { get; set; }
-		[SQLite.Column(SQL.Column_List_PkElectoralEvent)] public string? List_PkElectoralEvent { get; set; }
-		[SQLite.Column(SQL.Column_UrlWebsite)] public string? UrlWebsite { get; set; }
-        [SQLite.Column(SQL.Column_UrlLogo)] public string? UrlLogo { get; set; }
+		[JsonProperty(SQL.Column_Abbr), JsonPropertyName(SQL.Column_Abbr), SQLite.Column(SQL.Column_Abbr)] public string? Abbr { get; set; }
+		[JsonProperty(SQL.Column_Color), JsonPropertyName(SQL.Column_Color), SQLite.Column(SQL.Column_Color)] public string? Color { get; set; }
+		[JsonProperty(SQL.Column_Name), JsonPropertyName(SQL.Column_Name), SQLite.Column(SQL.Column_Name)] public string? Name { get; set; }
+        [JsonProperty(SQL.Column_DateEstablished), JsonPropertyName(SQL.Column_DateEstablished), SQLite.Column(SQL.Column_DateEstablished)] public string? DateEstablished { get; set; }
+        [JsonProperty(SQL.Column_DateDisestablished), JsonPropertyName(SQL.Column_DateDisestablished), SQLite.Column(SQL.Column_DateDisestablished)] public string? DateDisestablished { get; set; }
+        [JsonProperty(SQL.Column_Headquarters), JsonPropertyName(SQL.Column_Headquarters), SQLite.Column(SQL.Column_Headquarters)] public string? Headquarters { get; set; }
+		[JsonProperty(SQL.Column_List_PkElectoralEvent), JsonPropertyName(SQL.Column_List_PkElectoralEvent), SQLite.Column(SQL.Column_List_PkElectoralEvent)] public string? List_PkElectoralEvent { get; set; }
+		[JsonProperty(SQL.Column_UrlWebsite), JsonPropertyName(SQL.Column_UrlWebsite), SQLite.Column(SQL.Column_UrlWebsite)] public string? UrlWebsite { get; set; }
+        [JsonProperty(SQL.Column_UrlLogo), JsonPropertyName(SQL.Column_UrlLogo), SQLite.Column(SQL.Column_UrlLogo)] public string? UrlLogo { get; set; }
     }
 }

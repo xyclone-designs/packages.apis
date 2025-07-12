@@ -5,7 +5,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 {
 	public partial class ApiFiles
 	{
-		public class Response : GeneralRest.Response<object>
+		public class Response : GeneralRest.Response<ApiFile>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<ApiFile> queryable)

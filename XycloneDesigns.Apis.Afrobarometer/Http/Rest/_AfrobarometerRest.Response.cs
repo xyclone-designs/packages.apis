@@ -4,6 +4,6 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http.Rest
 {
 	public partial class AfrobarometerRest
 	{
-		public class Response : GeneralRest.Response<object> { }
+		public class Response<T> : GeneralRest.Response<T> { }
 	}
 }

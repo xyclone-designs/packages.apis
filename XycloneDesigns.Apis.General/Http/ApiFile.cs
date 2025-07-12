@@ -1,13 +1,25 @@
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.General.Http
 {
 	public class ApiFile
 	{
+		public class Json
+		{
+			public const string DateCreated = "datecreated";
+			public const string DateEdited = "dateedited";
+			public const string Description = "description";
+			public const string FilePath = "filepath";
+			public const string Name = "name";
+			public const string Url = "url";
+
+		}
 		public class OrderKeys
 		{
 			public const string Name = "name";
@@ -39,12 +51,12 @@ namespace XycloneDesigns.Apis.General.Http
 			}
 		}
 
-		public string? DateCreated { get; set; }
-		public string? DateEdited { get; set; }
-		public string? Description { get; set; }
-		public string? FilePath { private get; set; }
-		public string? Name { get; set; }
-		public string? Url { get; set; }
+		[JsonProperty(Json.DateCreated), JsonPropertyName(Json.DateCreated)] public string? DateCreated { get; set; }
+		[JsonProperty(Json.DateEdited), JsonPropertyName(Json.DateEdited)] public string? DateEdited { get; set; }
+		[JsonProperty(Json.Description), JsonPropertyName(Json.Description)] public string? Description { get; set; }
+		[JsonProperty(Json.FilePath), JsonPropertyName(Json.FilePath)] public string? FilePath { private get; set; }
+		[JsonProperty(Json.Name), JsonPropertyName(Json.Name)] public string? Name { get; set; }
+		[JsonProperty(Json.Url), JsonPropertyName(Json.Url)] public string? Url { get; set; }
 
 		public string? GetFilePath()
 		{

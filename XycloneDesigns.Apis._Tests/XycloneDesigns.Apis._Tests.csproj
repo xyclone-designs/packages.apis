@@ -23,8 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\XycloneDesigns.Apis.Afrobarometer\XycloneDesigns.Apis.Afrobarometer.csproj" />
     <ProjectReference Include="..\XycloneDesigns.Apis.ETenders\XycloneDesigns.Apis.ETenders.csproj" />
+    <ProjectReference Include="..\XycloneDesigns.Apis.General\XycloneDesigns.Apis.General.csproj" />
+    <ProjectReference Include="..\XycloneDesigns.Apis.IEC\XycloneDesigns.Apis.IEC.csproj" />
     <ProjectReference Include="..\XycloneDesigns.Apis.MunicipalMoney\XycloneDesigns.Apis.MunicipalMoney.csproj" />
+    <ProjectReference Include="..\XycloneDesigns.Apis.SAPS\XycloneDesigns.Apis.SAPS.csproj" />
   </ItemGroup>
 
 </Project>

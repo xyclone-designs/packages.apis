@@ -1,5 +1,8 @@
+using Newtonsoft.Json;
+
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.General.Http.Rest
 {
@@ -20,6 +23,13 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 		}
 		public class Response<T> : Response
 		{
+			public class Json	
+			{
+				public const string Count = "count";
+				public const string Items = "items";
+				public const string Page = "page";
+				public const string Pages = "pages";
+			}
 			public class TypeObject
 			{
 				public object Page = new { Type = "integer" };
@@ -28,10 +38,10 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 				public object? Items { get; set; }
 			}
 
-			public int Count { get; set; } = 1;
-			public int Page { get; set; } = 1;
-			public int Pages { get; set; } = 1;
-			public IEnumerable<T> Items { get; set; } = Enumerable.Empty<T>();
+			[JsonProperty(Json.Count), JsonPropertyName(Json.Count)] public int Count { get; set; } = 1;
+			[JsonProperty(Json.Items), JsonPropertyName(Json.Items)] public int Page { get; set; } = 1;
+			[JsonProperty(Json.Page), JsonPropertyName(Json.Page)] public int Pages { get; set; } = 1;
+			[JsonProperty(Json.Pages), JsonPropertyName(Json.Pages)] public IEnumerable<T> Items { get; set; } = Enumerable.Empty<T>();
 		}        
     }
 }

@@ -1,4 +1,7 @@
-﻿
+﻿using Newtonsoft.Json;
+
+using System.Text.Json.Serialization;
+
 namespace XycloneDesigns.Apis.General.Tables
 {
 	[SQLite.Table(SQL.Table)]
@@ -13,8 +16,8 @@ namespace XycloneDesigns.Apis.General.Tables
 			public const string Column_PkCountry = "pkCountry";
 		}
 
-        [SQLite.Column(SQL.Column_Code), SQLite.Unique] public string? Code { get; set; }
-		[SQLite.Column(SQL.Column_Name)] public string? Name { get; set; }
-        [SQLite.Column(SQL.Column_PkCountry)] public int? PkCountry { get; set; }
+        [SQLite.Column(SQL.Column_Code), JsonProperty(SQL.Column_Code), JsonPropertyName(SQL.Column_Code), SQLite.Unique] public string? Code { get; set; }
+		[SQLite.Column(SQL.Column_Name), JsonProperty(SQL.Column_Name), JsonPropertyName(SQL.Column_Name)] public string? Name { get; set; }
+        [SQLite.Column(SQL.Column_PkCountry), JsonProperty(SQL.Column_PkCountry), JsonPropertyName(SQL.Column_PkCountry)] public int? PkCountry { get; set; }
     }
 }

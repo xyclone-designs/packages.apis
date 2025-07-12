@@ -6,7 +6,7 @@ namespace XycloneDesigns.Apis.SAPS.Http.Rest
 {
 	public partial class Records 
 	{
-		public class Response : SAPSRest.Response
+		public class Response : SAPSRest.Response<Record>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<Record> queryable)

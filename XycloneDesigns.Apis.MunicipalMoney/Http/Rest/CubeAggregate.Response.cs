@@ -21,9 +21,6 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 				public const string TotalCellCount = "total_cell_count";
 			}
 
-			public Response() : base() { }
-			public Response(string response) : base(response) { }
-
 			[JsonProperty(Json.Aggregates), JsonPropertyName(Json.Aggregates)] public List<string>? Aggregates { get; set; }
 			[JsonProperty(Json.Cell), JsonPropertyName(Json.Cell)] public List<string>? Cell { get; set; }
 			[JsonProperty(Json.Cells), JsonPropertyName(Json.Cells)] public List<object>? Cells { get; set; }

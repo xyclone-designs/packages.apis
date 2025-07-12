@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V2
@@ -15,5 +17,19 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V2
 		[JsonProperty(Keys.Grant.Code), JsonPropertyName(Keys.Grant.Code)] public string? GrantCode { get; set; }
 		[JsonProperty(Keys.Grant.Label), JsonPropertyName(Keys.Grant.Label)] public string? GrantLabel { get; set; }
 		[JsonProperty(Keys.PeriodLength.Length), JsonPropertyName(Keys.PeriodLength.Length)] public string? PeriodLength { get; set; }
+
+		public static IEnumerable<string> KeysEnumerable
+		{
+			get => Enumerable.Empty<string>()
+				.Append(Keys.AmountType.Code)
+				.Append(Keys.AmountType.Label)
+				.Append(Keys.Demarcation.Code)
+				.Append(Keys.Demarcation.Label)
+				.Append(Keys.FinancialPeriod.Period)
+				.Append(Keys.FinancialYearEnd.Year)
+				.Append(Keys.Grant.Code)
+				.Append(Keys.Grant.Label)
+				.Append(Keys.PeriodLength.Length);
+		}
 	}
 }

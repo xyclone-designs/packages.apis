@@ -1,4 +1,7 @@
-﻿
+﻿using Newtonsoft.Json;
+
+using System.Text.Json.Serialization;
+
 namespace XycloneDesigns.Apis.IEC.Tables
 {
 	[SQLite.Table(SQL.Table)]
@@ -15,9 +18,9 @@ namespace XycloneDesigns.Apis.IEC.Tables
 		}
 
 		[SQLite.Unique] 
-		[SQLite.Column(SQL.Column_Id)] public string? Id { get; set; }
-		[SQLite.Column(SQL.Column_PkMunicipality)] public int? PkMunicipality { get; set; }
-        [SQLite.Column(SQL.Column_PkProvince)] public int? PkProvince { get; set; }
-        [SQLite.Column(SQL.Column_PkWard)] public int? PkWard { get; set; }
+		[JsonProperty(SQL.Column_Id), JsonPropertyName(SQL.Column_Id), SQLite.Column(SQL.Column_Id)] public string? Id { get; set; }
+		[JsonProperty(SQL.Column_PkMunicipality), JsonPropertyName(SQL.Column_PkMunicipality), SQLite.Column(SQL.Column_PkMunicipality)] public int? PkMunicipality { get; set; }
+        [JsonProperty(SQL.Column_PkProvince), JsonPropertyName(SQL.Column_PkProvince), SQLite.Column(SQL.Column_PkProvince)] public int? PkProvince { get; set; }
+        [JsonProperty(SQL.Column_PkWard), JsonPropertyName(SQL.Column_PkWard), SQLite.Column(SQL.Column_PkWard)] public int? PkWard { get; set; }
     }
 }

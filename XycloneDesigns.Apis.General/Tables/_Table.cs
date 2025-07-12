@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using Newtonsoft.Json;
+
+using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.General.Tables
 {
@@ -9,7 +12,7 @@ namespace XycloneDesigns.Apis.General.Tables
 			public const string Column_Pk = "pk";
 		}
 
-		[SQLite.PrimaryKey, SQLite.NotNull, SQLite.AutoIncrement, SQLite.Unique, SQLite.Column(SQL.Column_Pk)]
+		[SQLite.PrimaryKey, SQLite.NotNull, SQLite.AutoIncrement, SQLite.Unique, SQLite.Column(SQL.Column_Pk), JsonProperty(SQL.Column_Pk), JsonPropertyName(SQL.Column_Pk)]
         public int Pk { get; set; }
 
 		public static string AddPKIfUnique(string? pks, int? pk)

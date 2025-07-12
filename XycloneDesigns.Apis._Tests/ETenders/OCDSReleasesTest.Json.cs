@@ -14,7 +14,7 @@ namespace XycloneDesigns.Apis._Tests.ETenders
 		[InlineData("ocdsreleases_multiple.json")]
 		public async void JsonMultiple(string file)
 		{
-			string filepath = Path.Combine(Globals.CurrentDirectory, "ETenders", "datas", file);
+			string filepath = Path.Combine(Globals.Directory, "ETenders", "datas", file);
 
 			using FileStream filestream = File.OpenRead(filepath);
 			using StreamReader streamreader = new(filestream);
@@ -28,7 +28,7 @@ namespace XycloneDesigns.Apis._Tests.ETenders
 		[InlineData("ocdsreleases_single.json")]
 		public async void JsonSingle(string file)
 		{
-			string filepath = Path.Combine(Globals.CurrentDirectory, "ETenders", "datas", file);
+			string filepath = Path.Combine(Globals.Directory, "ETenders", "datas", file);
 
 			using FileStream filestream = File.OpenRead(filepath);
 			using StreamReader streamreader = new(filestream);

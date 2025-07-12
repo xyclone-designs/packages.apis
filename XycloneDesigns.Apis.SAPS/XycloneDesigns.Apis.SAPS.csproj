@@ -18,16 +18,16 @@
     <PackageOutputPath>../</PackageOutputPath>
     <PackageProjectUrl>https://xyclonedesigns.co.za/developers/nuget/$(AssemblyName)</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Initial</PackageReleaseNotes>
+    <PackageReleaseNotes>JSON serialisation compatibility</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageTags>south;africa;police;service;saps;api;xyclone;designs</PackageTags>
     <RepositoryUrl>https://github.com/xyclone-designs/packages.apis/$(AssemblyName)</RepositoryUrl>
     <Title>$(AssemblyName)</Title>
-    <Version>1.0.5</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.1.21" />
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.2.0" />
     <PackageReference Include="XycloneDesigns.Extensions.CSharp" Version="1.0.4" />
     <PackageReference Include="XycloneDesigns.Extensions.GZip" Version="1.0.0" />
     <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />

@@ -1,12 +1,13 @@
 using System.Linq;
 using System.Collections.Generic;
+
 using XycloneDesigns.Apis.SAPS.Tables;
 
 namespace XycloneDesigns.Apis.SAPS.Http.Rest
 {
 	public partial class Categories 
 	{
-		public class Response : SAPSRest.Response
+		public class Response : SAPSRest.Response<Category>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<Category> queryable)

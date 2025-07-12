@@ -7,7 +7,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 {
 	public partial class Districts 
 	{
-		public class Response : GeneralRest.Response<object>
+		public class Response : GeneralRest.Response<District>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<District> queryable)

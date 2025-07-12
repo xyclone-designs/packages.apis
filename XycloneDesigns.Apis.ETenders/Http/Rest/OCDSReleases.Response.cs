@@ -9,16 +9,10 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 	{
 		public class ResponseSingle : ETendersRest.Response 
 		{
-			public ResponseSingle() : base() { }
-			public ResponseSingle(string response) : base(response) { }
-
 			public Release? Release { get; set; }
 		}
 		public class ResponseMultiple : ETendersRest.Response 
 		{
-			public ResponseMultiple() : base() { }
-			public ResponseMultiple(string response) : base(response) { }
-
 			public string? License { get; set; }
 			public Link? Links { get; set; }
 			public Publisher? Publisher { get; set; }

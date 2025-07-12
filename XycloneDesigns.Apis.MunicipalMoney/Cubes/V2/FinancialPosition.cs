@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V2
@@ -18,5 +20,22 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V2
 		[JsonProperty(Keys.Item.PositionInReturnForm), JsonPropertyName(Keys.Item.PositionInReturnForm)] public string? ItemPositionInReturnForm { get; set; }
 		[JsonProperty(Keys.Item.ReturnFormStructure), JsonPropertyName(Keys.Item.ReturnFormStructure)] public string? ItemReturnFormStructure { get; set; }
 		[JsonProperty(Keys.PeriodLength.Length), JsonPropertyName(Keys.PeriodLength.Length)] public string? PeriodLength { get; set; }
+
+		public static IEnumerable<string> KeysEnumerable
+		{
+			get => Enumerable.Empty<string>()
+				.Append(Keys.AmountType.Code)
+				.Append(Keys.AmountType.Label)
+				.Append(Keys.Demarcation.Code)
+				.Append(Keys.Demarcation.Label)
+				.Append(Keys.FinancialPeriod.Period)
+				.Append(Keys.FinancialYearEnd.Year)
+				.Append(Keys.Item.Code)
+				.Append(Keys.Item.Composition)
+				.Append(Keys.Item.Label)
+				.Append(Keys.Item.PositionInReturnForm)
+				.Append(Keys.Item.ReturnFormStructure)
+				.Append(Keys.PeriodLength.Length);
+		}
 	}
 }

@@ -1,4 +1,7 @@
-﻿
+﻿using Newtonsoft.Json;
+
+using System.Text.Json.Serialization;
+
 namespace XycloneDesigns.Apis.SAPS.Tables
 {
 	[SQLite.Table(SQL.Table)]
@@ -12,6 +15,6 @@ namespace XycloneDesigns.Apis.SAPS.Tables
         }
 
 		[SQLite.Unique]
-		[SQLite.Column(SQL.Column_Name)] public string? Name { get; set; }   
+		[JsonProperty(SQL.Column_Name), JsonPropertyName(SQL.Column_Name), SQLite.Column(SQL.Column_Name)] public string? Name { get; set; }   
     }
 }

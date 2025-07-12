@@ -6,7 +6,7 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 {
 	public partial class Countries 
 	{
-		public class Response : GeneralRest.Response<object>
+		public class Response : GeneralRest.Response<Country>
 		{
 			public Response() { }
 			public Response(Request request, IQueryable<Country> queryable)

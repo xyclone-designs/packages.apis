@@ -15,15 +15,12 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 				public const string Status = "status";
 			}
 
-			public Response() : base() { }
-			public Response(string response) : base(response) { }
-
-			public List<DataItem>? Data { get; set; }
-			public string? Status { get; set; }
+			[JsonProperty(Json.Data), JsonPropertyName(Json.Data)] public List<DataItem>? Data { get; set; }
+			[JsonProperty(Json.Status), JsonPropertyName(Json.Status)] public string? Status { get; set; }
 
 			public class DataItem
 			{
-				public class JsonKeys
+				public class Json
 				{
 					public const string Description = "description";
 					public const string Label = "label";
@@ -31,10 +28,10 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 					public const string Uri = "uri";
 				}
 
-				[JsonProperty(JsonKeys.Description), JsonPropertyName(JsonKeys.Description)] public string? Description { get; set; }
-				[JsonProperty(JsonKeys.Label), JsonPropertyName(JsonKeys.Label)] public string? Label { get; set; }
-				[JsonProperty(JsonKeys.Name), JsonPropertyName(JsonKeys.Name)] public string? Name { get; set; }
-				[JsonProperty(JsonKeys.Uri), JsonPropertyName(JsonKeys.Uri)] public string? Uri { get; set; }		
+				[JsonProperty(Json.Description), JsonPropertyName(Json.Description)] public string? Description { get; set; }
+				[JsonProperty(Json.Label), JsonPropertyName(Json.Label)] public string? Label { get; set; }
+				[JsonProperty(Json.Name), JsonPropertyName(Json.Name)] public string? Name { get; set; }
+				[JsonProperty(Json.Uri), JsonPropertyName(Json.Uri)] public string? Uri { get; set; }		
 			}
 		}
 	}

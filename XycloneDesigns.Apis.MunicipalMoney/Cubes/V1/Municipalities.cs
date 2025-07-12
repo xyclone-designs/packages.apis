@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V1
@@ -24,5 +26,28 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Cubes.V1
 		[JsonProperty(Keys.Municipality.StreetAddressPart3), JsonPropertyName(Keys.Municipality.StreetAddressPart3)] public string? StreetAddressPart3 { get; set; }
 		[JsonProperty(Keys.Municipality.StreetAddressPart4), JsonPropertyName(Keys.Municipality.StreetAddressPart4)] public string? StreetAddressPart4 { get; set; }
 		[JsonProperty(Keys.Municipality.Url), JsonPropertyName(Keys.Municipality.Url)] public string? Url { get; set; }
+
+		public static IEnumerable<string> KeysEnumerable
+		{
+			get => Enumerable.Empty<string>()
+				.Append(Keys.Municipality.Category)
+				.Append(Keys.Municipality.DemarcationCode)
+				.Append(Keys.Municipality.FaxNumber)
+				.Append(Keys.Municipality.LongName)
+				.Append(Keys.Municipality.MIIFCategory)
+				.Append(Keys.Municipality.Name)
+				.Append(Keys.Municipality.ParentMunicipalityCode)
+				.Append(Keys.Municipality.PhoneNumber)
+				.Append(Keys.Municipality.PostalAddressPart1)
+				.Append(Keys.Municipality.PostalAddressPart2)
+				.Append(Keys.Municipality.PostalAddressPart3)
+				.Append(Keys.Municipality.ProvinceCode)
+				.Append(Keys.Municipality.ProvinceName)
+				.Append(Keys.Municipality.StreetAddressPart1)
+				.Append(Keys.Municipality.StreetAddressPart2)
+				.Append(Keys.Municipality.StreetAddressPart3)
+				.Append(Keys.Municipality.StreetAddressPart4)
+				.Append(Keys.Municipality.Url);
+		}
 	}
 }

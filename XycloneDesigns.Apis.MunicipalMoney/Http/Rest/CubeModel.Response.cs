@@ -21,9 +21,6 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 				public const string Status = "status";
 			}
 
-			public Response() : base() { }
-			public Response(string response) : base(response) { }
-
 			[JsonProperty(Json.Model), JsonPropertyName(Json.Model)] public ModelObject? Model { get; set; }
 			[JsonProperty(Json.Name), JsonPropertyName(Json.Name)] public string? Name { get; set; }
             [JsonProperty(Json.Status), JsonPropertyName(Json.Status)] public string? Status { get; set; }

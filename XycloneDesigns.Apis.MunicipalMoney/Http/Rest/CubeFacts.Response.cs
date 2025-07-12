@@ -21,9 +21,6 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 				public const string TotalFactCount = "total_fact_count";
 			}
 
-			public Response() : base() { }
-			public Response(string response) : base(response) { }
-
 			[JsonProperty(Json.Cell), JsonPropertyName(Json.Cell)] public List<string>? Cell { get; set; }
 			[JsonProperty(Json.Data), JsonPropertyName(Json.Data)] public List<object>? Data { get; set; }
 			[JsonProperty(Json.Fields), JsonPropertyName(Json.Fields)] public List<string>? Fields { get; set; }
