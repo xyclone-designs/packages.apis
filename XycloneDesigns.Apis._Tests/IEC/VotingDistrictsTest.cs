@@ -14,7 +14,7 @@ namespace XycloneDesigns.Apis._Tests.IEC
 	{
 		[Fact] public async void Http()
 		{
-			VotingDistricts.Request request = new()
+			VotingDistrictsRest.Request request = new()
 			{
 				PageSize = 1
 			};
@@ -24,8 +24,8 @@ namespace XycloneDesigns.Apis._Tests.IEC
 
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<VotingDistricts.Response>();
-			JsonSerializerSystem.Deserialize<VotingDistricts.Response>(json);
+			JObject.Parse(json).ToObject<VotingDistrictsRest.Response>();
+			JsonSerializerSystem.Deserialize<VotingDistrictsRest.Response>(json);
 		}
 	}
 }

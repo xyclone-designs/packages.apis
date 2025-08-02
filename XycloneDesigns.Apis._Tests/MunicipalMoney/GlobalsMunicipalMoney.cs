@@ -27,7 +27,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 		public static readonly string Directory = Path.Combine(Globals.Directory, "MunicipalMoney");
 		public static readonly string Directory_Datas = Path.Combine(Directory, "datas");
 
-		public static IEnumerable<string> CubeNames => new string[]
+		private static readonly IEnumerable<string> _CubeNames = new string[]
 		{
 			Cube.Names.AgedCreditorAnalysis,
 			Cube.Names.AgedCreditorAnalysisV2,
@@ -51,7 +51,10 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 			Cube.Names.UnauthorisedIrregularFruitlessAndWastefulExpenditure,
 		};
 
-		public static readonly IEnumerable<string[]> CubeNamesDemarcated = CubeNames.Select(_ => _ switch
+		public static readonly IEnumerable<object[]> CubeNames = _CubeNames.Select(_ => new object[] { _ });
+		public static readonly IEnumerable<object[]> CubeNamesModel = _CubeNames.Select(_ => new object[] { string.Format("{0}_model.json", _) });
+		public static readonly IEnumerable<object[]> CubeJsons = _CubeNames.Select(_ => new object[] { string.Format("{0}_aggregate.json", _) });
+		public static readonly IEnumerable<object[]> CubeNamesDemarcated = _CubeNames.Select(_ => _ switch
 		{
 			Cube.Names.AgedCreditorAnalysis => AgedCreditorAnalysis.KeysEnumerable.SelectMany(__ => new string[] { _, __ }).ToArray(),
 			Cube.Names.AgedCreditorAnalysisV2 => AgedCreditorAnalysisV2.KeysEnumerable.SelectMany(__ => new string[] { _, __ }).ToArray(),

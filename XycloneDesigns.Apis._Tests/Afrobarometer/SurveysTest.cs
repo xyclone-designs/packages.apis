@@ -14,7 +14,7 @@ namespace XycloneDesigns.Apis._Tests.Afrobarometer
 	{
 		[Fact] public async void Http()
 		{
-			Surveys.Request request = new()
+			SurveysRest.Request request = new()
 			{
 				PageSize = 1
 			};
@@ -24,8 +24,8 @@ namespace XycloneDesigns.Apis._Tests.Afrobarometer
 
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<Surveys.Response>();
-			JsonSerializerSystem.Deserialize<Surveys.Response>(json);
+			JObject.Parse(json).ToObject<SurveysRest.Response>();
+			JsonSerializerSystem.Deserialize<SurveysRest.Response>(json);
 		}
 	}
 }

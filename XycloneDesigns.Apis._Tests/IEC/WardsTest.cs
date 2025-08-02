@@ -14,7 +14,7 @@ namespace XycloneDesigns.Apis._Tests.IEC
 	{
 		[Fact] public async void Http()
 		{
-			Wards.Request request = new()
+			WardsRest.Request request = new()
 			{
 				PageSize = 1
 			};
@@ -24,8 +24,8 @@ namespace XycloneDesigns.Apis._Tests.IEC
 
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<Wards.Response>();
-			JsonSerializerSystem.Deserialize<Wards.Response>(json);
+			JObject.Parse(json).ToObject<WardsRest.Response>();
+			JsonSerializerSystem.Deserialize<WardsRest.Response>(json);
 		}
 	}
 }

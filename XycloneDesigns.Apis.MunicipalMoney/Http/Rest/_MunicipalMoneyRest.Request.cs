@@ -1,12 +1,15 @@
-using XycloneDesigns.Apis.General.Http;
+using System.Collections.Generic;
 
 namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 {
 	public partial class MunicipalMoneyRest
 	{
-		public class Request : ApiRequest 
+		public class Request
 		{
-			public const string Path = "https://municipaldata.treasury.gov.za/api/cubes";
+			public static IEnumerable<string> ToUriParameters(MunicipalMoney.Request _)
+			{
+				yield break;
+			}
 		}
 	}
 }

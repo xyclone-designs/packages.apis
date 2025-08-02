@@ -1,0 +1,24 @@
+using System;
+using System.Net.Http;
+
+using XycloneDesigns.Apis.General.Http.Rest;
+
+namespace XycloneDesigns.Apis.Afrobarometer.Http.Rest
+{
+	public partial class InterviewsRest
+	{
+		public const string Path = "interviews";
+
+		public class Request : Interviews.Request
+		{
+			public override HttpRequestMessage ToHttpRequestMessage(string? pathbase = null, string? path = null)
+			{
+				return new HttpRequestMessage
+				{
+					Method = HttpMethod.Get,
+					RequestUri = new Uri(string.Format("{0}{1}?{2}", pathbase ?? AfrobarometerRest.PathBase, path ?? Path, string.Join('&', GeneralRest.ToUriParameters(this))))
+				};
+			}
+		}
+	}
+}

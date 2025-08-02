@@ -18,17 +18,16 @@
     <PackageOutputPath>../</PackageOutputPath>
     <PackageProjectUrl>https://xyclonedesigns.co.za/developers/nuget/$(AssemblyName)</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>JSON serialisation compatibility</PackageReleaseNotes>
+    <PackageReleaseNotes>Parameter Updates and Reworks</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageTags>south;africa;elections;iec;independent;electoral;commission;extension;xyclone;designs</PackageTags>
     <RepositoryUrl>https://github.com/xyclone-designs/packages.apis/$(AssemblyName)</RepositoryUrl>
     <Title>$(AssemblyName)</Title>
-    <Version>1.2</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.2.0" />
-    <PackageReference Include="XycloneDesigns.Extensions.SQLite" Version="1.0.0" />
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

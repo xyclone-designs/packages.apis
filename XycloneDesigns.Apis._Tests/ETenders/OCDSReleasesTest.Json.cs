@@ -21,7 +21,7 @@ namespace XycloneDesigns.Apis._Tests.ETenders
 
 			string json = await streamreader.ReadToEndAsync();
 
-			JObject.Parse(json).ToObject<OCDSReleases.ResponseMultiple>();
+			JObject.Parse(json).ToObject<OCDSReleasesRest.Response>();
 		}
 
 		[Theory]
@@ -35,7 +35,7 @@ namespace XycloneDesigns.Apis._Tests.ETenders
 
 			string json = await streamreader.ReadToEndAsync();
 
-			JObject.Parse(json).ToObject<OCDSReleases.ResponseSingle>();
+			JObject.Parse(json).ToObject<OCDSReleaseRest.Response>();
 		}
 	}
 }

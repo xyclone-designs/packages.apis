@@ -1,5 +1,6 @@
 using Newtonsoft.Json.Linq;
 
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 
@@ -13,10 +14,19 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 {
 	public partial class CubeMembersDemarcationTest
 	{
-		[InlineData(GlobalsMunicipalMoney.CubeNamesDemarcated)]
+		public static IEnumerable<object[]> CubeNames()
+		{
+			return GlobalsMunicipalMoney.CubeNamesDemarcated;
+		}
+		public static IEnumerable<object[]> CubeJsons()
+		{
+			return GlobalsMunicipalMoney.CubeJsons;
+		}
+
+		[MemberData(nameof(CubeNames))]
 		[Theory] public async void Http(string cubename, string cubemembername)
 		{
-			CubeMembersDemarcation.Request request = new(cubename, cubemembername)
+			MembersDemarcationRest.Request request = new(cubename, cubemembername)
 			{
 				PageSize = 1,
 			};
@@ -26,11 +36,11 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<CubeMembersDemarcation.Response>();
-			JsonSerializerSystem.Deserialize<CubeMembersDemarcation.Response>(json);
+			JObject.Parse(json).ToObject<MembersDemarcationRest.Response>();
+			JsonSerializerSystem.Deserialize<MembersDemarcationRest.Response>(json);
 		}
 
-		[InlineData("aged_creditor_demarcation.json")]
+		[MemberData(nameof(CubeJsons))]
 		[Theory] public async void Json(string file)
 		{
 			string filepath = Path.Combine(GlobalsMunicipalMoney.Directory_Datas, file);
@@ -40,8 +50,8 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 
 			string json = await streamreader.ReadToEndAsync();
 
-			JObject.Parse(json).ToObject<CubeMembersDemarcation.Response>();
-			JsonSerializerSystem.Deserialize<CubeMembersDemarcation.Response>(json);
+			JObject.Parse(json).ToObject<MembersDemarcationRest.Response>();
+			JsonSerializerSystem.Deserialize<MembersDemarcationRest.Response>(json);
 		}
 	}
 }

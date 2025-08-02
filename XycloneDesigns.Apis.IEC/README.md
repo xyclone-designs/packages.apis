@@ -29,7 +29,7 @@ string json = await httpresponsemessage.Content.ReadAsStringAsync();
 Visit [api.xyclonedesigns.co.za/iec/rest](https://api.xyclonedesigns.co.za/iec/rest) for a more comprehensive swagger documentation in regards to the API.
 
 ### General Request
-Base From [XycloneDesigns.Apis.General](https://github.com/xyclone-designs/packages.apis.general).
+Base From [XycloneDesigns.Apis.IEC](https://github.com/xyclone-designs/packages.apis.general).
 <pre>
 public class Request 
 {
@@ -64,7 +64,7 @@ public class Request
 </pre>
 
 ### General Response
-Base From [XycloneDesigns.Apis.General](https://github.com/xyclone-designs/packages.apis.general).
+Base From [XycloneDesigns.Apis.IEC](https://github.com/xyclone-designs/packages.apis.general).
 <pre>
 public class Reponse
 {

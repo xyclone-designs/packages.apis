@@ -1,8 +1,7 @@
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 
 using Xunit;
@@ -15,10 +14,19 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 {
 	public partial class CubeAggregateTest
 	{
-		[InlineData(GlobalsMunicipalMoney.CubeNames)]
+		public static IEnumerable<object[]> CubeNames()
+		{
+			return GlobalsMunicipalMoney.CubeNames;
+		}
+		public static IEnumerable<object[]> CubeJsons()
+		{
+			return GlobalsMunicipalMoney.CubeJsons;
+		}
+
+		[MemberData(nameof(CubeNames))]
 		[Theory] public async void Http(string cubename)
 		{
-			CubeAggregate.Request request = new(cubename)
+			AggregateRest.Request request = new(cubename)
 			{
 				PageSize = 1,
 			};
@@ -28,11 +36,11 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<CubeAggregate.Response>();
-			JsonSerializerSystem.Deserialize<CubeAggregate.Response>(json);
+			JObject.Parse(json).ToObject<AggregateRest.Response>();
+			JsonSerializerSystem.Deserialize<AggregateRest.Response>(json);
 		}
 
-		[InlineData(GlobalsMunicipalMoney.CubeNames.Select(_ => string.Format("{0}_aggregate.json", _)))]
+		[MemberData(nameof(CubeJsons))]
 		[Theory] public async void Json(string file)
 		{
 			string filepath = Path.Combine(GlobalsMunicipalMoney.Directory_Datas, file);
@@ -42,8 +50,8 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 
 			string json = await streamreader.ReadToEndAsync();
 
-			JObject.Parse(json).ToObject<CubeAggregate.Response>();
-			JsonSerializerSystem.Deserialize<CubeAggregate.Response>(json);
+			JObject.Parse(json).ToObject<AggregateRest.Response>();
+			JsonSerializerSystem.Deserialize<AggregateRest.Response>(json);
 		}
 	}
 }

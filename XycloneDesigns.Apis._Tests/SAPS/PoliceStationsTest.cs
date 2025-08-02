@@ -14,7 +14,7 @@ namespace XycloneDesigns.Apis._Tests.SAPS
 	{
 		[Fact] public async void Http()
 		{
-			PoliceStations.Request request = new()
+			PoliceStationsRest.Request request = new()
 			{
 				PageSize = 1
 			};
@@ -24,8 +24,8 @@ namespace XycloneDesigns.Apis._Tests.SAPS
 
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<PoliceStations.Response>();
-			JsonSerializerSystem.Deserialize<PoliceStations.Response>(json);
+			JObject.Parse(json).ToObject<PoliceStationsRest.Response>();
+			JsonSerializerSystem.Deserialize<PoliceStationsRest.Response>(json);
 		}
 	}
 }

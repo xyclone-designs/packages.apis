@@ -1,9 +1,11 @@
 using Newtonsoft.Json.Linq;
 
+using System;
 using System.Net.Http;
 
 using Xunit;
 
+using XycloneDesigns.Apis.General.Http;
 using XycloneDesigns.Apis.General.Http.Rest;
 
 using JsonSerializerSystem = System.Text.Json.JsonSerializer;
@@ -12,20 +14,23 @@ namespace XycloneDesigns.Apis._Tests.General
 {
 	public partial class ProvincesTest
 	{
-		[Fact] public async void Http()
+		[Fact] public async void HttpRest()
 		{
-			Provinces.Request request = new()
+			ProvincesRest.Request request = new()
 			{
-				PageSize = 1
+				Page = 1,
+				PageSize = 1,  
 			};
 
 			using HttpRequestMessage httprequestmessage = request.ToHttpRequestMessage();
 			using HttpResponseMessage httpresponsemessage = await Globals.HttpClient.SendAsync(httprequestmessage);
 
+			Console.WriteLine("ProvincesTest.HttpRest.Uri: '{0}'", httprequestmessage.RequestUri);
+
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<Provinces.Response>();
-			JsonSerializerSystem.Deserialize<Provinces.Response>(json);
+			JObject.Parse(json).ToObject<ProvincesRest.Response>();
+			JsonSerializerSystem.Deserialize<ProvincesRest.Response>(json);
 		}
 	}
 }

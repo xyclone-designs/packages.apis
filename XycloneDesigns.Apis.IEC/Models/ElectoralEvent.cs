@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using XycloneDesigns.Apis.General.Models;
-
 namespace XycloneDesigns.Apis.IEC.Models
 {
 	public partial class ElectoralEvent : Model

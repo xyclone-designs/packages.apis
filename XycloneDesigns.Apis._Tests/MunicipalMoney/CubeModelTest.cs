@@ -1,8 +1,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 
 using Xunit;
@@ -15,21 +15,30 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 {
 	public partial class CubeModelTest
 	{
-		[InlineData(GlobalsMunicipalMoney.CubeNames)]
+		public static IEnumerable<object[]> CubeNames()
+		{
+			return GlobalsMunicipalMoney.CubeNames;
+		}
+		public static IEnumerable<object[]> CubeJsons()
+		{
+			return GlobalsMunicipalMoney.CubeNamesModel;
+		}
+
+		[MemberData(nameof(CubeNames))]
 		[Theory] public async void Http(string cubename)
 		{
-			CubeModel.Request request = new(cubename);
+			CubeModelRest.Request request = new(cubename);
 
 			using HttpRequestMessage httprequestmessage = request.ToHttpRequestMessage();
 			using HttpResponseMessage httpresponsemessage = await Globals.HttpClient.SendAsync(httprequestmessage);
 
 			string json = await httpresponsemessage.Content.ReadAsStringAsync();
 
-			JObject.Parse(json).ToObject<CubeModel.Response>();
-			JsonSerializerSystem.Deserialize<CubeModel.Response>(json);
+			JObject.Parse(json).ToObject<CubeModelRest.Response>();
+			JsonSerializerSystem.Deserialize<CubeModelRest.Response>(json);
 		}
 
-		[InlineData(GlobalsMunicipalMoney.CubeNames.Select(_ => string.Format("{0}_model.json", _)))]
+		[MemberData(nameof(CubeJsons))]
 		[Theory] public async void Json(string file)
 		{
 			string filepath = Path.Combine(GlobalsMunicipalMoney.Directory_Datas, file);
@@ -39,8 +48,8 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 
 			string json = await streamreader.ReadToEndAsync();
 
-			JObject.Parse(json).ToObject<CubeModel.Response>();
-			JsonSerializerSystem.Deserialize<CubeModel.Response>(json);
+			JObject.Parse(json).ToObject<CubeModelRest.Response>();
+			JsonSerializerSystem.Deserialize<CubeModelRest.Response>(json);
 		}
 	}
 }

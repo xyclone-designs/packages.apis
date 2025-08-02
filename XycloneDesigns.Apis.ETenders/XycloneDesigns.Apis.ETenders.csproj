@@ -17,17 +17,17 @@
     <PackageLicenseFile>license-apache-2.0.txt</PackageLicenseFile>
     <PackageOutputPath>../</PackageOutputPath>
     <PackageProjectUrl>https://xyclonedesigns.co.za/developers/nuget/$(AssemblyName)</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Initial with JSON serialisation compatibility</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>                                         
+    <PackageReleaseNotes>Updates</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageTags>tenders;etender;south;africa;api;xyclone;designs</PackageTags>
     <RepositoryUrl>https://github.com/xyclone-designs/packages.apis/$(AssemblyName)</RepositoryUrl>
     <Title>$(AssemblyName)</Title>
-    <Version>1.0.0</Version>
+    <Version>1.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Apis.General" Version="1.1.21" />
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
