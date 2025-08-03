@@ -61,7 +61,6 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http
 					[JsonProperty(Json.Ref), JsonPropertyName(Json.Ref)] public string? Ref { get; set; }
 				}
 				public class Dimension
-
 				{
 					public class Json
 					{
@@ -83,7 +82,7 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http
 					[JsonProperty(Json.LabelAttribute), JsonPropertyName(Json.LabelAttribute)] public string? LabelAttribute { get; set; }
 					[JsonProperty(Json.Description), JsonPropertyName(Json.Description)] public string? Description { get; set; }
 					[JsonProperty(Json.Label), JsonPropertyName(Json.Label)] public string? Label { get; set; }
-					[JsonProperty(Json.JoinColumn), JsonPropertyName(Json.JoinColumn), Newtonsoft.Json.JsonConverter(typeof(JsonForceListConverter<string>))] public List<string>? JoinColumn { get; set; }
+					// TODO [JsonProperty(Json.JoinColumn), JsonPropertyName(Json.JoinColumn), Newtonsoft.Json.JsonConverter(typeof(JsonForceStringListConverter))] public List<string>? JoinColumn { get; set; }
 					[JsonProperty(Json.Ref), JsonPropertyName(Json.Ref)] public string? Ref { get; set; }
 					[JsonProperty(Json.LabelRef), JsonPropertyName(Json.LabelRef)] public string? LabelRef { get; set; }
 					[JsonProperty(Json.KeyRef), JsonPropertyName(Json.KeyRef)] public string? KeyRef { get; set; }

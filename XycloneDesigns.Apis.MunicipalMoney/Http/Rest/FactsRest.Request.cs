@@ -7,7 +7,7 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 {
 	public partial class FactsRest
 	{
-		public static string Path(string cubename) => string.Format("/cubes/{1}/facts", cubename);
+		public static string Path(string cubename) => string.Format("/cubes/{0}/facts", cubename);
 
 		public class Request(string cubename) : Facts.Request(cubename)
 		{
@@ -22,8 +22,8 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 				if (request.Format is not null)
 					yield return string.Format("{0}={1}", Parameters.Format, request.Format);
 
-				if (request.PageSize.HasValue)
-					yield return string.Format("{0}={1}", Parameters.PageSize, request.PageSize.Value);
+				if (request.Page.HasValue)
+					yield return string.Format("{0}={1}", Parameters.Page, request.Page.Value);
 
 				if (request.PageSize.HasValue)
 					yield return string.Format("{0}={1}", Parameters.PageSize, request.PageSize.Value);

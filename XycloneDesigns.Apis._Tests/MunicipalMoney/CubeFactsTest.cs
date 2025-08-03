@@ -30,6 +30,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 		{
 			FactsRest.Request request = new(cubename)
 			{
+				Page = 1,
 				PageSize = 1,
 			};
 

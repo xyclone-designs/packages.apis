@@ -14,7 +14,7 @@ namespace XycloneDesigns.Apis._Tests.ETenders
 	public partial class OCDSReleasesTest
 	{
 		[Theory]
-		[InlineData(1, 50, "2024-01-01", "2024-03-31")]
+		[InlineData(1, 50, "2024-01-01", "2024-03-20")]
 		public async void HttpMultiple(int pageNumber, int pageSize, string dateFrom, string dateTo)
 		{
 			OCDSReleasesRest.Request requestmultiple = new() 

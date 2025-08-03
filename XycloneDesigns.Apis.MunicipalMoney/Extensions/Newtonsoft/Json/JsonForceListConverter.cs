@@ -9,13 +9,19 @@ namespace Newtonsoft.Json
 	{
 		public override bool CanConvert(Type objectType)
 		{
-			return objectType == typeof(List<T>);
+			return true;
 		}
 		public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
 		{
 			JToken jtoken = JToken.Load(reader);
 
-			return jtoken.Type == JTokenType.Array ? jtoken.ToObject<List<T>>() : jtoken.ToObject<T>() is T t ? new List<T> { t } : null;
+			if (jtoken.Type == JTokenType.Array)
+				return jtoken.ToObject<List<T>>();
+
+			if (jtoken.ToObject<T>() is T t)
+				return new List<T> { t };
+
+			return null;
 		}
 		public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer) { }
 	}

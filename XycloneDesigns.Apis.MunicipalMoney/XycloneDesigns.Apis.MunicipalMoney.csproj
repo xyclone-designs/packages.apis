@@ -23,7 +23,7 @@
     <PackageTags>municipal;money;south;africa;api;government;xyclone;designs</PackageTags>
     <RepositoryUrl>https://github.com/xyclone-designs/packages.apis/$(AssemblyName)</RepositoryUrl>
     <Title>$(AssemblyName)</Title>
-    <Version>1.4.94</Version>
+    <Version>1.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

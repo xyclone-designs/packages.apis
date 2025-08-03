@@ -16,7 +16,7 @@ namespace XycloneDesigns.Apis.MunicipalMoney.Http.Rest
 				return new HttpRequestMessage
 				{
 					Method = HttpMethod.Get,
-					RequestUri = new Uri(string.Format("{0}{1}", pathbase ?? MunicipalMoneyRest.PathBase, path ?? Path(CubeName), CubeName))
+					RequestUri = new Uri(string.Format("{0}{1}", pathbase ?? MunicipalMoneyRest.PathBase, path ?? Path(CubeName)))
 				};
 			}
 		}

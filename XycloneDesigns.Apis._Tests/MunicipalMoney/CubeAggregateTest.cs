@@ -28,6 +28,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 		{
 			AggregateRest.Request request = new(cubename)
 			{
+				Page = 1,
 				PageSize = 1,
 			};
 

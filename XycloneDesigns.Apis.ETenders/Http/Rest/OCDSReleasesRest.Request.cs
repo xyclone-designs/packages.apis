@@ -6,7 +6,7 @@ namespace XycloneDesigns.Apis.ETenders.Http.Rest
 {
 	public partial class OCDSReleasesRest
 	{
-		public const string Path = "OCDSReleases/release";
+		public const string Path = "OCDSReleases";
 
 		public static IEnumerable<string> ToUriParameters(Request request)
 		{

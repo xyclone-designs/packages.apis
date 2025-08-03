@@ -28,6 +28,7 @@ namespace XycloneDesigns.Apis._Tests.MunicipalMoney
 		{
 			MembersDemarcationRest.Request request = new(cubename, cubemembername)
 			{
+				Page = 1,
 				PageSize = 1,
 			};
 
