@@ -9,13 +9,13 @@ namespace XycloneDesigns.Apis.SAPS.Http
 {
 	public static partial class Categories
 	{
-		public class Filters : Base.Filters
+		public class Filters : GeneralBase.Filters
 		{
 			public const string Name = Category.SQL.Column_Name;
 						
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Filters.AsEnumerable()
+				return GeneralBase.Filters.AsEnumerable()
 					.Append(Name);
 			}
 		}

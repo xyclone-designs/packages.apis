@@ -6,7 +6,7 @@ using XycloneDesigns.Apis.General.Tables;
 
 namespace XycloneDesigns.Apis.General.Http
 {
-	public static partial class Base
+	public static partial class GeneralBase
 	{
 		public class Orders
 		{
@@ -19,9 +19,9 @@ namespace XycloneDesigns.Apis.General.Http
 			}
 		}
 
-		public static IOrderedEnumerable<TTable> Order<TTable>(this IEnumerable<TTable> queryable, params Order[] orders) where TTable : _Table
+		public static IOrderedEnumerable<TGeneralTable> Order<TGeneralTable>(this IEnumerable<TGeneralTable> queryable, params Order[] orders) where TGeneralTable : GeneralTable
 		{
-			IOrderedEnumerable<TTable>? orderedqueryable = null;
+			IOrderedEnumerable<TGeneralTable>? orderedqueryable = null;
 
 			foreach (Order order in orders)
 				orderedqueryable = orderedqueryable is not null
@@ -34,9 +34,9 @@ namespace XycloneDesigns.Apis.General.Http
 
 			return orderedqueryable ?? queryable.OrderBy(_ => _.Pk);
 		}
-		public static IOrderedEnumerable<TTable> Order<TTable>(this IOrderedEnumerable<TTable> queryable, params Order[] orders) where TTable : _Table
+		public static IOrderedEnumerable<TGeneralTable> Order<TGeneralTable>(this IOrderedEnumerable<TGeneralTable> queryable, params Order[] orders) where TGeneralTable : GeneralTable
 		{
-			IOrderedEnumerable<TTable>? orderedqueryable = null;
+			IOrderedEnumerable<TGeneralTable>? orderedqueryable = null;
 
 			foreach (Order order in orders)
 				orderedqueryable = (order.Key, order.Descending) switch

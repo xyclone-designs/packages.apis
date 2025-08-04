@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 {
 	public static partial class VotingDistricts
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string Id = VotingDistrict.SQL.Column_Id;
 			public const string PkCountry = VotingDistrict.SQL.Column_PkCountry;
@@ -20,7 +20,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(Id)
 					.Append(PkCountry)
 					.Append(PkDistrict)

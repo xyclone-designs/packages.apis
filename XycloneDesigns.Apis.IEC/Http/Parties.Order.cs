@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 {
 	public static partial class Parties
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string Abbr = Party.SQL.Column_Abbr;
 			public const string Name = Party.SQL.Column_Name;
@@ -22,7 +22,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(Abbr)
 					.Append(Name)
 					.Append(DateEstablished)

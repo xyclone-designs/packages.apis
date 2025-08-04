@@ -5,6 +5,6 @@ namespace XycloneDesigns.Apis.SAPS.Http
 {
 	public static partial class Records
 	{
-		public abstract class Response : Base.Response<Record> { }
+		public abstract class Response : GeneralBase.Response<Record> { }
 	}
 }

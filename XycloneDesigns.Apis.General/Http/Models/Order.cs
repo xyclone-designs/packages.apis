@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace XycloneDesigns.Apis.General.Http.Models
@@ -15,7 +16,7 @@ namespace XycloneDesigns.Apis.General.Http.Models
 		
 		public static Order Parse(string value, IFormatProvider? provider)
 		{
-			if (TryParse(value, provider, out Order order))
+			if (TryParse(value, provider, out Order? order) && order is not null)
 				return order;
 
 			string[] _str = value.Split('|', StringSplitOptions.TrimEntries);
@@ -25,7 +26,7 @@ namespace XycloneDesigns.Apis.General.Http.Models
 
 			return new Order(key ?? string.Empty, bool.TryParse(descending, out bool _descending) && _descending);
 		}
-		public static bool TryParse(string? value, IFormatProvider? provider, out Order order)
+		public static bool TryParse([NotNullWhen(true)] string? value, IFormatProvider? provider, [MaybeNullWhen(false)] out Order order)
 		{
 			order = null;
 

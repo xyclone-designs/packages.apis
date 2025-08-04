@@ -6,7 +6,7 @@ using XycloneDesigns.Apis.General.Http.Models;
 
 namespace XycloneDesigns.Apis.General.Http
 {
-	public static partial class Base
+	public static partial class GeneralBase
 	{
 		public abstract class Request
 		{

@@ -11,16 +11,16 @@ namespace XycloneDesigns.Apis.General.Http.Rest
 	{
 		public const string PathBase = "general/rest";
 
-		public static IEnumerable<string> ToUriParameters(Base.Request request)
+		public static IEnumerable<string> ToUriParameters(GeneralBase.Request request)
 		{
-			yield return string.Format("{0}={1}", Base.Request.Parameters.Page, request.Page);
-			yield return string.Format("{0}={1}", Base.Request.Parameters.PageSize, request.PageSize);
+			yield return string.Format("{0}={1}", GeneralBase.Request.Parameters.Page, request.Page);
+			yield return string.Format("{0}={1}", GeneralBase.Request.Parameters.PageSize, request.PageSize);
 
 			foreach (Filter filter in request.Filter)
-				yield return string.Format("{0}={1}", Base.Request.Parameters.Filter, filter.AsString());
+				yield return string.Format("{0}={1}", GeneralBase.Request.Parameters.Filter, filter.AsString());
 
 			foreach (Order orders in request.Order)
-				yield return string.Format("{0}={1}", Base.Request.Parameters.Orders, orders.AsString());
+				yield return string.Format("{0}={1}", GeneralBase.Request.Parameters.Orders, orders.AsString());
 		}
 
 		public static IEnumerable<T> Filter<T>(this IEnumerable<T> enumerable, Func<T, Filter, bool> filter, params Filter[] filters)

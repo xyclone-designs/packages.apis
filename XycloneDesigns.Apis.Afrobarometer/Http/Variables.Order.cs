@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http
 {
 	public static partial class Variables
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string Id = Variable.SQL.Column_Id;
 			public const string Label = Variable.SQL.Column_Label;
@@ -17,7 +17,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(Id)
 					.Append(Label)
 					.Append(ValueLabels);

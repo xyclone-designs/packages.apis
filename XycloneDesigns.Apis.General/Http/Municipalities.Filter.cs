@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class Municipalities
 	{
-		public class Filters : Base.Filters
+		public class Filters : GeneralBase.Filters
 		{
 			public const string AddressEmail = Municipality.SQL.Column_AddressEmail;
 			public const string AddressPostal = Municipality.SQL.Column_AddressPostal;
@@ -33,7 +33,7 @@ namespace XycloneDesigns.Apis.General.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Filters.AsEnumerable()
+				return GeneralBase.Filters.AsEnumerable()
 					.Append(AddressEmail)
 					.Append(AddressPostal)
 					.Append(AddressStreet)

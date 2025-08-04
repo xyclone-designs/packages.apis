@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http
 {
 	public static partial class Surveys
 	{
-		public class Filters : Base.Filters
+		public class Filters : GeneralBase.Filters
 		{
 			public const string InterviewCount = Survey.SQL.Column_InterviewCount;
 			public const string List_PkQuestion = Survey.SQL.Column_List_PkQuestion;
@@ -20,7 +20,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Filters.AsEnumerable()
+				return GeneralBase.Filters.AsEnumerable()
 					.Append(InterviewCount)
 					.Append(List_PkQuestion)
 					.Append(List_PkVariable)

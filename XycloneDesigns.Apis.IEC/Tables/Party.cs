@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.IEC.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public class Party : _Table
+	public class Party : IECTable
 	{
-		public new class SQL
+		public new class SQL : IECTable.SQL
 		{
 			public const string Table = "parties";
 
@@ -20,6 +21,22 @@ namespace XycloneDesigns.Apis.IEC.Tables
 			public const string Column_List_PkElectoralEvent = "list_pkElectoralEvent";
 			public const string Column_UrlWebsite = "urlWebsite";
 			public const string Column_UrlLogo = "urlLogo";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in IECTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_Abbr;
+				yield return Column_Color;
+				yield return Column_Name;
+				yield return Column_DateEstablished;
+				yield return Column_DateDisestablished;
+				yield return Column_Headquarters;
+				yield return Column_List_PkElectoralEvent;
+				yield return Column_UrlWebsite;
+				yield return Column_UrlLogo;
+			}
 		}
 		
 		[JsonProperty(SQL.Column_Abbr), JsonPropertyName(SQL.Column_Abbr), SQLite.Column(SQL.Column_Abbr)] public string? Abbr { get; set; }

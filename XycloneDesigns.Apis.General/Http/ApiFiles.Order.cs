@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class ApiFiles
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string DateCreated = "dateCreated";
 			public const string DateEdited = "dateEdited";
@@ -17,7 +17,7 @@ namespace XycloneDesigns.Apis.General.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(DateCreated)
 					.Append(DateEdited)
 					.Append(Name);

@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 {
 	public static partial class Ballots
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string PkElectoralEvent = Ballot.SQL.Column_PkElectoralEvent;
 			public const string PkMunicipality = Ballot.SQL.Column_PkMunicipality;
@@ -27,7 +27,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(PkElectoralEvent)
 					.Append(PkMunicipality)
 					.Append(PkProvince)

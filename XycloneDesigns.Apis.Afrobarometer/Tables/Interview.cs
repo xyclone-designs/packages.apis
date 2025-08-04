@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 using XycloneDesigns.Apis.Afrobarometer.Enums;
@@ -7,9 +8,9 @@ using XycloneDesigns.Apis.Afrobarometer.Enums;
 namespace XycloneDesigns.Apis.Afrobarometer.Tables
 {
 	[SQLite.Table(SQL.Table)]
-    public class Interview : _Table
+    public class Interview : AfrobarometerTable
 	{
-		public new class SQL
+		public new class SQL : AfrobarometerTable.SQL
 		{
 			public const string Table = "interviews";
 
@@ -17,6 +18,17 @@ namespace XycloneDesigns.Apis.Afrobarometer.Tables
 			public const string Column_PkLanguage = "pkLanguage";
 			public const string Column_PkSurvey = "pkSurvey";
 			public const string Column_Round = "round";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in AfrobarometerTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_List_PkVariable_Record;
+				yield return Column_PkLanguage;
+				yield return Column_PkSurvey;
+				yield return Column_Round;
+			}
 		}
 
 		[JsonProperty(SQL.Column_List_PkVariable_Record), JsonPropertyName(SQL.Column_List_PkVariable_Record), SQLite.Column(SQL.Column_List_PkVariable_Record)] public string? List_PkVariable_Record { get; set; }

@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.SAPS.Http
 {
 	public static partial class PoliceStations
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string Name = PoliceStation.SQL.Column_Name;
 			public const string PkCountry = PoliceStation.SQL.Column_PkCountry;
@@ -19,7 +19,7 @@ namespace XycloneDesigns.Apis.SAPS.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(Name)
 					.Append(PkCountry)
 					.Append(PkDistrict)

@@ -4,6 +4,6 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http
 {
 	public static partial class Variables
 	{
-		public abstract class Request : Base.Request { }
+		public abstract class Request : GeneralBase.Request { }
 	}
 }

@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 {
 	public static partial class ElectoralEvents
 	{
-		public class Filters : Base.Filters
+		public class Filters : GeneralBase.Filters
 		{
 			public const string Abbr = ElectoralEvent.SQL.Column_Abbr;
 			public const string Date = ElectoralEvent.SQL.Column_Date;
@@ -18,7 +18,7 @@ namespace XycloneDesigns.Apis.IEC.Http
 			
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Filters.AsEnumerable()
+				return GeneralBase.Filters.AsEnumerable()
 					.Append(Abbr)
 					.Append(Date)
 					.Append(Name)

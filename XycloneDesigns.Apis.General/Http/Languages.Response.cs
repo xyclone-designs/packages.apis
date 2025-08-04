@@ -4,6 +4,6 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class Languages
 	{
-		public abstract class Response : Base.Response<Language> { }
+		public abstract class Response : GeneralBase.Response<Language> { }
 	}
 }

@@ -8,9 +8,86 @@ using System.Text.Json.Serialization;
 namespace XycloneDesigns.Apis.IEC.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public class Ballot : _Table
+	public class Ballot : IECTable
 	{
-		public new class SQL
+		public class Types
+		{
+            public const string Municipal = "municipal";
+            public const string MunicipalDC40 = "municipal.DC40";
+            public const string MunicipalDMADC60 = "municipal.DMADC60";
+            public const string MunicipalPR = "municipal.PR";
+            public const string MunicipalWard = "municipal.Ward";
+            public const string National = "national";
+            public const string NationalEC = "national.EC";
+            public const string NationalFS = "national.FS";
+            public const string NationalGT = "national.GT";
+            public const string NationalKZN = "national.KZN";
+            public const string NationalLIM = "national.LIM";
+            public const string NationalMP = "national.MP";
+            public const string NationalNC = "national.NC";
+            public const string NationalNW = "national.NW";
+            public const string NationalWC = "national.WC";
+            public const string Provincial = "provincial";
+            public const string ProvincialEC = "provincial.EC";
+            public const string ProvincialFS = "provincial.FS";
+            public const string ProvincialGT = "provincial.GT";
+            public const string ProvincialKZN = "provincial.KZN";
+            public const string ProvincialLIM = "provincial.LIM";
+            public const string ProvincialMP = "provincial.MP";
+            public const string ProvincialNC = "provincial.NC";
+            public const string ProvincialNW = "provincial.NW";
+            public const string ProvincialWC = "provincial.WC";
+            public const string Regional = "regional";
+            public const string RegionalEC = "regional.EC";
+            public const string RegionalFS = "regional.FS";
+            public const string RegionalGT = "regional.GT";
+            public const string RegionalKZN = "regional.KZN";
+            public const string RegionalLIM = "regional.LIM";
+            public const string RegionalMP = "regional.MP";
+            public const string RegionalNC = "regional.NC";
+            public const string RegionalNW = "regional.NW";
+            public const string RegionalWC = "regional.WC";
+
+			public static IEnumerable<string> All()
+			{
+				yield return Municipal;
+				yield return MunicipalDC40;
+				yield return MunicipalDMADC60;
+				yield return MunicipalPR;
+				yield return MunicipalWard;
+				yield return National;
+				yield return NationalEC;
+				yield return NationalFS;
+				yield return NationalGT;
+				yield return NationalKZN;
+				yield return NationalLIM;
+				yield return NationalMP;
+				yield return NationalNC;
+				yield return NationalNW;
+				yield return NationalWC;
+				yield return Provincial;
+				yield return ProvincialEC;
+				yield return ProvincialFS;
+				yield return ProvincialGT;
+				yield return ProvincialKZN;
+				yield return ProvincialLIM;
+				yield return ProvincialMP;
+				yield return ProvincialNC;
+				yield return ProvincialNW;
+				yield return ProvincialWC;
+				yield return Regional;
+				yield return RegionalEC;
+				yield return RegionalFS;
+				yield return RegionalGT;
+				yield return RegionalKZN;
+				yield return RegionalLIM;
+				yield return RegionalMP;
+				yield return RegionalNC;
+				yield return RegionalNW;
+				yield return RegionalWC;
+			}
+		}
+		public new class SQL : IECTable.SQL
 		{
 			public const string Table = "ballots";
 
@@ -29,6 +106,28 @@ namespace XycloneDesigns.Apis.IEC.Tables
 			public const string Column_VotesSpoilt = "votesSpoilt";
 			public const string Column_VotesTotal = "votesTotal";
 			public const string Column_VotesValid = "votesValid";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in IECTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_List_PkParty_Votes;
+				yield return Column_List_PkParty_Seats;
+				yield return Column_PkElectoralEvent;
+				yield return Column_PkMunicipality;
+				yield return Column_PkProvince;
+				yield return Column_PkVotingDistrict;
+				yield return Column_PkWard;
+				yield return Column_Type;
+				yield return Column_VotersRegistered;
+				yield return Column_VotesMEC7;
+				yield return Column_VotesSection24A;
+				yield return Column_VotesSpecial;
+				yield return Column_VotesSpoilt;
+				yield return Column_VotesTotal;
+				yield return Column_VotesValid;
+			}
 		}
 
 		private int? _VotersRegistered;

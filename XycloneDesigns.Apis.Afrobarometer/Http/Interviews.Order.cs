@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http
 {
 	public static partial class Interviews
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string List_PkVariable_Record = Interview.SQL.Column_List_PkVariable_Record;
 			public const string PkLanguage = Interview.SQL.Column_PkLanguage;
@@ -18,7 +18,7 @@ namespace XycloneDesigns.Apis.Afrobarometer.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(List_PkVariable_Record)
 					.Append(PkLanguage)
 					.Append(PkSurvey)

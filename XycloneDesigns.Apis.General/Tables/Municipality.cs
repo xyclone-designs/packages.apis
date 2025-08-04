@@ -1,13 +1,35 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.General.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public class Municipality : _Table
+	public class Municipality : GeneralTable
 	{
-		public new class SQL
+		public class MiifCategories
+		{
+			public const string A = "A";
+			public const string B1 = "B1";
+			public const string B2 = "B2";
+			public const string B3 = "B3";
+			public const string B4 = "B4";
+			public const string C1 = "C1";
+			public const string C2 = "C2";
+
+			public static IEnumerable<string> All()
+			{
+				yield return A;
+				yield return B1;
+				yield return B2;
+				yield return B3;
+				yield return B4;
+				yield return C1;
+				yield return C2;
+			}
+		}
+		public new class SQL : GeneralTable.SQL
 		{
 			public const string Table = "municipalities";
 
@@ -30,6 +52,32 @@ namespace XycloneDesigns.Apis.General.Tables
 			public const string Column_SquareKms = "squareKms";
 			public const string Column_UrlLogo = "urlLogo";
 			public const string Column_UrlWebsite = "urlWebsite";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in GeneralTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_AddressEmail;
+				yield return Column_AddressPostal;
+				yield return Column_AddressStreet;
+				yield return Column_Category;
+				yield return Column_GeoCode;
+				yield return Column_GeoLevel;
+				yield return Column_IsDisestablished;
+				yield return Column_MiifCategory;
+				yield return Column_Name;
+				yield return Column_NameLong;
+				yield return Column_NumberFax;
+				yield return Column_NumberPhone;
+				yield return Column_PkCountry;
+				yield return Column_PkDistrict;
+				yield return Column_PkProvince;
+				yield return Column_Population;
+				yield return Column_SquareKms;
+				yield return Column_UrlLogo;
+				yield return Column_UrlWebsite;
+			}
 		}
 		
         [SQLite.Column(SQL.Column_AddressEmail), JsonProperty(SQL.Column_AddressEmail), JsonPropertyName(SQL.Column_AddressEmail)] public string? AddressEmail { get; set; }

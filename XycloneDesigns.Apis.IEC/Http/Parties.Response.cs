@@ -5,6 +5,6 @@ namespace XycloneDesigns.Apis.IEC.Http
 {
 	public static partial class Parties
 	{
-		public abstract class Response : Base.Response<Party> { }
+		public abstract class Response : GeneralBase.Response<Party> { }
 	}
 }

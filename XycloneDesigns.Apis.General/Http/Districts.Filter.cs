@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class Districts
 	{
-		public class Filters : Base.Filters
+		public class Filters : GeneralBase.Filters
 		{
 			public const string Code = District.SQL.Column_Code;
 			public const string Name = District.SQL.Column_Name;
@@ -18,7 +18,7 @@ namespace XycloneDesigns.Apis.General.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Filters.AsEnumerable()
+				return GeneralBase.Filters.AsEnumerable()
 					.Append(Code)
 					.Append(Name)
 					.Append(PkProvince)

@@ -6,7 +6,7 @@ using XycloneDesigns.Apis.General.Tables;
 
 namespace XycloneDesigns.Apis.General.Http
 {
-	public static partial class Base
+	public static partial class GeneralBase
 	{
 		public class Filters
 		{
@@ -19,11 +19,11 @@ namespace XycloneDesigns.Apis.General.Http
 			}
 		}
 
-		public static bool Filter<TTable>(this Filter filter, TTable ttable) where TTable : _Table
+		public static bool Filter<TGeneralBase>(this Filter filter, TGeneralBase tgeneralbase) where TGeneralBase : GeneralTable
 		{
 			return filter.Key switch
 			{
-				Filters.Pk or _ => filter.Passes(ttable.Pk),
+				Filters.Pk or _ => filter.Passes(tgeneralbase.Pk),
 			};
 		}
 	}

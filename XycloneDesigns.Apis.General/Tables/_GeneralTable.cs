@@ -1,15 +1,20 @@
 ﻿using Newtonsoft.Json;
-
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.General.Tables
 {
-	public class _Table
+	public class GeneralTable
     {
 		public class SQL
 		{
 			public const string Column_Pk = "pk";
+
+			public static IEnumerable<string> Columns()
+			{
+				yield return Column_Pk;
+			}
 		}
 
 		[SQLite.PrimaryKey, SQLite.NotNull, SQLite.AutoIncrement, SQLite.Unique, SQLite.Column(SQL.Column_Pk), JsonProperty(SQL.Column_Pk), JsonPropertyName(SQL.Column_Pk)]

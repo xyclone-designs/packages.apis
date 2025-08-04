@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.IEC.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public class VotingDistrict : _Table
+	public class VotingDistrict : IECTable
     {
-		public new class SQL
+		public new class SQL : IECTable.SQL
 		{
 			public const string Table = "votingdistricts";
 
@@ -17,6 +18,19 @@ namespace XycloneDesigns.Apis.IEC.Tables
 			public const string Column_PkMunicipality = "pkMunicipality";
 			public const string Column_PkProvince = "pkProvince";
 			public const string Column_PkWard = "pkWard";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in IECTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_Id;
+				yield return Column_PkCountry;
+				yield return Column_PkDistrict;
+				yield return Column_PkMunicipality;
+				yield return Column_PkProvince;
+				yield return Column_PkWard;
+			}
 		}
 
 		[SQLite.Unique] 

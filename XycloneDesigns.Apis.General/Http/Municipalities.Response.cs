@@ -4,6 +4,6 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class Municipalities
 	{
-		public abstract class Response : Base.Response<Municipality> { }
+		public abstract class Response : GeneralBase.Response<Municipality> { }
 	}
 }

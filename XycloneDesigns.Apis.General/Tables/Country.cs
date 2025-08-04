@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.General.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public partial class Country : _Table
+	public partial class Country : GeneralTable
 	{
-		public new class SQL
+		public new class SQL : GeneralTable.SQL
 		{
 			public const string Table = "countries";
 
@@ -18,6 +19,20 @@ namespace XycloneDesigns.Apis.General.Tables
 			public const string Column_SquareKms = "squareKms";
 			public const string Column_UrlCoatOfArms = "urlCoatOfArms";
 			public const string Column_UrlWebsite = "urlWebsite";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in GeneralTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_Capital;
+				yield return Column_Code;
+				yield return Column_Name;
+				yield return Column_Population;
+				yield return Column_SquareKms;
+				yield return Column_UrlCoatOfArms;
+				yield return Column_UrlWebsite;
+			}
 		}
 
         [SQLite.Column(SQL.Column_Capital), JsonProperty(SQL.Column_Capital), JsonPropertyName(SQL.Column_Capital)] public string? Capital { get; set; }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 using XycloneDesigns.Apis.General.Http.Enums;
@@ -190,12 +191,12 @@ namespace XycloneDesigns.Apis.General.Http.Models
 		}
 		public static Filter Parse(string value, IFormatProvider? provider)
 		{
-			if (TryParse(value, provider, out Filter filter))
+			if (TryParse(value, provider, out Filter? filter) && filter is not null)
 				return filter;
 
 			return Parse<object>(value);
 		}
-		public static bool TryParse(string? value, IFormatProvider? provider, out Filter filter)
+		public static bool TryParse([NotNullWhen(true)] string? value, IFormatProvider? provider, [MaybeNullWhen(false)] out Filter filter)
 		{
 			filter = null;
 

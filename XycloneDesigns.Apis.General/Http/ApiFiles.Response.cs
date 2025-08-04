@@ -4,6 +4,6 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class ApiFiles
 	{
-		public abstract class Response : Base.Response<ApiFile> { }
+		public abstract class Response : GeneralBase.Response<ApiFile> { }
 	}
 }

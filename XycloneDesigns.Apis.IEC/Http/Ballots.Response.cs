@@ -5,6 +5,6 @@ namespace XycloneDesigns.Apis.IEC.Http
 {
 	public static partial class Ballots
 	{
-		public abstract class Response : Base.Response<Ballot> { }
+		public abstract class Response : GeneralBase.Response<Ballot> { }
 	}
 }

@@ -8,7 +8,7 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class Municipalities
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string AddressEmail = Municipality.SQL.Column_AddressEmail;
 			public const string AddressPostal = Municipality.SQL.Column_AddressPostal;
@@ -32,7 +32,7 @@ namespace XycloneDesigns.Apis.General.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(AddressEmail)
 					.Append(AddressPostal)
 					.Append(AddressStreet)

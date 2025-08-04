@@ -1,14 +1,15 @@
 ﻿using Newtonsoft.Json;
 
 using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.IEC.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public class ElectoralEvent : _Table
+	public class ElectoralEvent : IECTable
     {
-		public new class SQL
+		public new class SQL : IECTable.SQL
 		{
 			public const string Table = "electoralevents";
 
@@ -21,6 +22,22 @@ namespace XycloneDesigns.Apis.IEC.Tables
 			public const string Column_List_PkParty_IdProvince_RegionalAllocation = "list_pkParty_idProvince_regionalAllocation";
 			public const string Column_Name = "name";
 			public const string Column_Type = "type";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in IECTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_Abbr;
+				yield return Column_Date;
+				yield return Column_List_PkBallot;
+				yield return Column_List_PkMunicipality_PkParty;
+				yield return Column_List_PkParty_Designation_NationalAllocation;
+				yield return Column_List_PkParty_IdProvince_ProvincialAllocation;
+				yield return Column_List_PkParty_IdProvince_RegionalAllocation;
+				yield return Column_Name;
+				yield return Column_Type;
+			}
 		}
 
 		public class Types
@@ -29,7 +46,15 @@ namespace XycloneDesigns.Apis.IEC.Tables
             public const string National = "national";
             public const string Provincial = "provincial";
             public const string Regional = "regional";
-        }
+
+			public static IEnumerable<string> All()
+			{
+                yield return Municipal;
+				yield return National;
+				yield return Provincial;
+				yield return Regional;
+			}
+		}
 
         [JsonProperty(SQL.Column_Abbr), JsonPropertyName(SQL.Column_Abbr), SQLite.Column(SQL.Column_Abbr)] public string? Abbr { get; set; }
 		[JsonProperty(SQL.Column_Date), JsonPropertyName(SQL.Column_Date), SQLite.Column(SQL.Column_Date)] public string? Date { get; set; }

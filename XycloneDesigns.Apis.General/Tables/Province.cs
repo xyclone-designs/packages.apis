@@ -1,13 +1,42 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.General.Tables
 {
 	[SQLite.Table(SQL.Table)]
-	public partial class Province : _Table
+	public partial class Province : GeneralTable
 	{
-		public new class SQL
+		public class Codes
+		{
+			public class SouthAfrica
+			{
+				public const string EC = "EC";
+				public const string FS = "FS";
+				public const string GT = "GT";
+				public const string KZN = "KZN";
+				public const string LIM = "LIM";
+				public const string MP = "MP";
+				public const string NC = "NC";
+				public const string NW = "NW";
+				public const string WC = "WC";
+
+				public static IEnumerable<string> All()
+				{
+					yield return EC;
+					yield return FS;
+					yield return GT;
+					yield return KZN;
+					yield return LIM;
+					yield return MP;
+					yield return NC;
+					yield return NW;
+					yield return WC;
+				}
+			}
+		}
+		public new class SQL : GeneralTable.SQL
 		{
 			public const string Table = "provinces";
 
@@ -19,6 +48,21 @@ namespace XycloneDesigns.Apis.General.Tables
 			public const string Column_SquareKms = "squareKms";
 			public const string Column_UrlCoatOfArms = "urlCoatOfArms";
 			public const string Column_UrlWebsite = "urlWebsite";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in GeneralTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_Capital;
+				yield return Column_Code;
+				yield return Column_Name;
+				yield return Column_Population;
+				yield return Column_PkCountry;
+				yield return Column_SquareKms;
+				yield return Column_UrlCoatOfArms;
+				yield return Column_UrlWebsite;
+			}
 		}
 
         [JsonProperty(SQL.Column_Capital), JsonPropertyName(SQL.Column_Capital), SQLite.Column(SQL.Column_Capital)] public string? Capital { get; set; }

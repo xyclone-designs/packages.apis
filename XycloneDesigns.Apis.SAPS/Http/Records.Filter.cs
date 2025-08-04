@@ -9,7 +9,7 @@ namespace XycloneDesigns.Apis.SAPS.Http
 {
 	public static partial class Records
 	{
-		public class Filters : Base.Filters
+		public class Filters : GeneralBase.Filters
 		{
 			public const string List_PkCategoryValue = Record.SQL.Column_List_PkCategoryValue;
 			public const string PkPoliceStation = Record.SQL.Column_PkPoliceStation;
@@ -17,7 +17,7 @@ namespace XycloneDesigns.Apis.SAPS.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Filters.AsEnumerable()
+				return GeneralBase.Filters.AsEnumerable()
 					.Append(List_PkCategoryValue)
 					.Append(PkPoliceStation)
 					.Append(Year);

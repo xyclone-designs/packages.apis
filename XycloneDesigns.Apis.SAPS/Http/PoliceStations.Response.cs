@@ -5,6 +5,6 @@ namespace XycloneDesigns.Apis.SAPS.Http
 {
 	public static partial class PoliceStations
 	{
-		public abstract class Response : Base.Response<PoliceStation> { }
+		public abstract class Response : GeneralBase.Response<PoliceStation> { }
 	}
 }

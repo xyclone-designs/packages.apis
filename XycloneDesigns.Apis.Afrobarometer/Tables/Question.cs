@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace XycloneDesigns.Apis.Afrobarometer.Tables
 {
 	[SQLite.Table(SQL.Table)]
-    public class Question : _Table
+    public class Question : AfrobarometerTable
 	{
-		public new class SQL
+		public new class SQL : AfrobarometerTable.SQL
 		{
 			public const string Table = "questions";
 
@@ -19,6 +20,21 @@ namespace XycloneDesigns.Apis.Afrobarometer.Tables
 			public const string Column_Source = "source";
 			public const string Column_Text = "text";
 			public const string Column_VariableLabel = "variableLabel";
+
+			public new static IEnumerable<string> Columns()
+			{
+				foreach (string columns in AfrobarometerTable.SQL.Columns())
+					yield return columns;
+
+				yield return Column_Id;
+				yield return Column_List_PkSurvey;
+				yield return Column_Note;
+				yield return Column_PkLanguage;
+				yield return Column_PkVariable;
+				yield return Column_Source;
+				yield return Column_Text;
+				yield return Column_VariableLabel;
+			}
 		}
 
 		[JsonProperty(SQL.Column_Id), JsonPropertyName(SQL.Column_Id), SQLite.Column(SQL.Column_Id)] public string? Id { get; set; }

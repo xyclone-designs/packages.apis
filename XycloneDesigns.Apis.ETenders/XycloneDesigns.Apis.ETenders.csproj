@@ -23,11 +23,11 @@
     <PackageTags>tenders;etender;south;africa;api;xyclone;designs</PackageTags>
     <RepositoryUrl>https://github.com/xyclone-designs/packages.apis/$(AssemblyName)</RepositoryUrl>
     <Title>$(AssemblyName)</Title>
-    <Version>1.5</Version>
+    <Version>2.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XycloneDesigns.Apis.General" Version="2.0.0" />
+    <PackageReference Include="XycloneDesigns.Apis.General" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>

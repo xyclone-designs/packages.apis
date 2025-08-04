@@ -9,14 +9,14 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class Languages
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string Code = Language.SQL.Column_Code;
 			public const string Name = Language.SQL.Column_Name;
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(Code)
 					.Append(Name);
 			}

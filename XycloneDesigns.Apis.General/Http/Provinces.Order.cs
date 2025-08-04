@@ -8,7 +8,7 @@ namespace XycloneDesigns.Apis.General.Http
 {
 	public static partial class Provinces
 	{
-		public class Orders : Base.Orders
+		public class Orders : GeneralBase.Orders
 		{
 			public const string Capital = Province.SQL.Column_Capital;
 			public const string Code = Province.SQL.Column_Code;
@@ -19,7 +19,7 @@ namespace XycloneDesigns.Apis.General.Http
 
 			public new static IEnumerable<string> AsEnumerable()
 			{
-				return Base.Orders.AsEnumerable()
+				return GeneralBase.Orders.AsEnumerable()
 					.Append(Capital)
 					.Append(Code)
 					.Append(Name)
